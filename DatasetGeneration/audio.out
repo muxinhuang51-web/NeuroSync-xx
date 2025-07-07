@@ -1,0 +1,664 @@
+Starting dataset generation...
+Starting parallel execution of 300 tasks with 5 workers
+
+Batch 1/60: Processing indices 0 to 4
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 60090.32it/s]
+Completed batch 1/60
+
+Batch 2/60: Processing indices 5 to 9
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 75437.12it/s]
+Completed batch 2/60
+
+Batch 3/60: Processing indices 10 to 14
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 32870.72it/s]
+Completed batch 3/60
+
+Batch 4/60: Processing indices 15 to 19
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 22721.04it/s]
+Completed batch 4/60
+
+Batch 5/60: Processing indices 20 to 24
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 23967.45it/s]
+Completed batch 5/60
+
+Batch 6/60: Processing indices 25 to 29
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 27235.74it/s]
+Completed batch 6/60
+
+Batch 7/60: Processing indices 30 to 34
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 24216.54it/s]
+Completed batch 7/60
+
+Batch 8/60: Processing indices 35 to 39
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 25175.89it/s]
+Completed batch 8/60
+
+Batch 9/60: Processing indices 40 to 44
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 29127.11it/s]
+Completed batch 9/60
+
+Batch 10/60: Processing indices 45 to 49
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 26817.80it/s]
+Completed batch 10/60
+
+Batch 11/60: Processing indices 50 to 54
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 29248.98it/s]
+Completed batch 11/60
+
+Batch 12/60: Processing indices 55 to 59
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 25420.02it/s]
+Completed batch 12/60
+
+Batch 13/60: Processing indices 60 to 64
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 27813.69it/s]
+Completed batch 13/60
+
+Batch 14/60: Processing indices 65 to 69
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 27962.03it/s]
+Completed batch 14/60
+
+Batch 15/60: Processing indices 70 to 74
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 24022.36it/s]
+Completed batch 15/60
+
+Batch 16/60: Processing indices 75 to 79
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 22550.02it/s]
+Completed batch 16/60
+
+Batch 17/60: Processing indices 80 to 84
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 24357.17it/s]
+Completed batch 17/60
+
+Batch 18/60: Processing indices 85 to 89
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 24906.79it/s]
+Completed batch 18/60
+
+Batch 19/60: Processing indices 90 to 94
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 28767.52it/s]
+Completed batch 19/60
+
+Batch 20/60: Processing indices 95 to 99
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 29248.98it/s]
+Completed batch 20/60
+
+Batch 21/60: Processing indices 100 to 104
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 26214.40it/s]
+Completed batch 21/60
+
+Batch 22/60: Processing indices 105 to 109
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 29127.11it/s]
+Completed batch 22/60
+
+Batch 23/60: Processing indices 110 to 114
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 18412.22it/s]
+Completed batch 23/60
+
+Batch 24/60: Processing indices 115 to 119
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 28610.53it/s]
+Completed batch 24/60
+
+Batch 25/60: Processing indices 120 to 124
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 27962.03it/s]
+Completed batch 25/60
+
+Batch 26/60: Processing indices 125 to 129
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 24730.57it/s]
+Completed batch 26/60
+
+Batch 27/60: Processing indices 130 to 134
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 25327.92it/s]
+Completed batch 27/60
+
+Batch 28/60: Processing indices 135 to 139
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 24300.72it/s]
+Completed batch 28/60
+
+Batch 29/60: Processing indices 140 to 144
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 25175.89it/s]
+Completed batch 29/60
+
+Batch 30/60: Processing indices 145 to 149
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 25327.92it/s]
+Completed batch 30/60
+
+Batch 31/60: Processing indices 150 to 154
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 23940.09it/s]
+Completed batch 31/60
+
+Batch 32/60: Processing indices 155 to 159
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 24701.44it/s]
+Completed batch 32/60
+
+Batch 33/60: Processing indices 160 to 164
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 24701.44it/s]
+Completed batch 33/60
+
+Batch 34/60: Processing indices 165 to 169
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 29371.88it/s]
+Completed batch 34/60
+
+Batch 35/60: Processing indices 170 to 174
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 22121.86it/s]
+Completed batch 35/60
+
+Batch 36/60: Processing indices 175 to 179
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 26579.87it/s]
+Completed batch 36/60
+
+Batch 37/60: Processing indices 180 to 184
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 24995.85it/s]
+Completed batch 37/60
+
+Batch 38/60: Processing indices 185 to 189
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 28807.03it/s]
+Completed batch 38/60
+
+Batch 39/60: Processing indices 190 to 194
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 25145.71it/s]
+Completed batch 39/60
+
+Batch 40/60: Processing indices 195 to 199
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 24643.38it/s]
+Completed batch 40/60
+
+Batch 41/60: Processing indices 200 to 204
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 63550.06it/s]
+Completed batch 41/60
+
+Batch 42/60: Processing indices 205 to 209
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 25827.00it/s]
+Completed batch 42/60
+
+Batch 43/60: Processing indices 210 to 214
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 26715.31it/s]
+Completed batch 43/60
+
+Batch 44/60: Processing indices 215 to 219
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 28301.65it/s]
+Completed batch 44/60
+
+Batch 45/60: Processing indices 220 to 224
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 22239.15it/s]
+Completed batch 45/60
+
+Batch 46/60: Processing indices 225 to 229
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 26990.37it/s]
+Completed batch 46/60
+
+Batch 47/60: Processing indices 230 to 234
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 27557.84it/s]
+Completed batch 47/60
+
+Batch 48/60: Processing indices 235 to 239
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 24995.85it/s]
+Completed batch 48/60
+
+Batch 49/60: Processing indices 240 to 244
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 27413.75it/s]
+Completed batch 49/60
+
+Batch 50/60: Processing indices 245 to 249
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 28571.55it/s]
+Completed batch 50/60
+
+Batch 51/60: Processing indices 250 to 254
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 25145.71it/s]
+Completed batch 51/60
+
+Batch 52/60: Processing indices 255 to 259
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 44906.90it/s]
+Completed batch 52/60
+
+Batch 53/60: Processing indices 260 to 264
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 28455.25it/s]
+Completed batch 53/60
+
+Batch 54/60: Processing indices 265 to 269
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 23858.38it/s]
+Completed batch 54/60
+
+Batch 55/60: Processing indices 270 to 274
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 64927.31it/s]
+Completed batch 55/60
+
+Batch 56/60: Processing indices 275 to 279
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 28571.55it/s]
+Completed batch 56/60
+
+Batch 57/60: Processing indices 280 to 284
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 44150.57it/s]
+Completed batch 57/60
+
+Batch 58/60: Processing indices 285 to 289
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 29289.83it/s]
+Completed batch 58/60
+
+Batch 59/60: Processing indices 290 to 294
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 26990.37it/s]
+Completed batch 59/60
+
+Batch 60/60: Processing indices 295 to 299
+  0%|          | 0/5 [00:00<?, ?it/s]100%|██████████| 5/5 [00:00<00:00, 25858.84it/s]
+Error in worker 49: Xunfei request failed with Sid: cht000b4ecf@dx19567d8fbaf9a4b700 code: 11202, msg: AppIdQpsOverFlowError:(03:47:08.335) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 128: Xunfei request failed with Sid: cht000b4d23@dx1956a4cc3c4b8f3700 code: 10110, msg: ServiceIsBusyError:(15:12:53.944) service license not enough
+Error in worker 175: Xunfei request failed with Sid: cht000ba7fe@dx1956b7497bdb81b700 code: 11202, msg: AppIdQpsOverFlowError:(20:35:58.014) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`4`N
+Error in worker 208: Xunfei request failed with Sid: cht000b1553@dx1956c5f7d4b9a4b700 code: 11202, msg: AppIdQpsOverFlowError:(00:52:32.203) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 221: Xunfei request failed with Sid: cht000b993b@dx1956ce284f0b81b700 code: 11202, msg: AppIdQpsOverFlowError:(03:15:39.376) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 268: Xunfei request failed with Sid: cht000b24a5@dx1956e219ce5b81a700 code: 11202, msg: AppIdQpsOverFlowError:(09:04:11.493) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`4`N
+Error in worker 282: Xunfei request failed with Sid: cht000bc20e@dx1956eb53cebb81b700 code: 11202, msg: AppIdQpsOverFlowError:(11:45:26.251) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 84: Xunfei request failed with Sid: cht000b18af@dx19568c98a649a4b700 code: 11202, msg: AppIdQpsOverFlowError:(08:09:53.509) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 112: Xunfei request failed with Sid: cht000bfcba@dx19569d8c5169a4b700 code: 11202, msg: AppIdQpsOverFlowError:(13:06:08.790) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`4`N
+Error in worker 209: Xunfei request failed with Sid: cht000b1ece@dx1956c5f7d5ab8f3700 code: 11202, msg: AppIdQpsOverFlowError:(00:52:32.218) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`4`N
+Error in worker 111: Xunfei request failed with Sid: cht000bfcb4@dx19569d8c49c9a4b700 code: 11202, msg: AppIdQpsOverFlowError:(13:06:08.669) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 155: Xunfei request failed with Sid: cht000b40e0@dx1956aeb38d1b8f2700 code: 11202, msg: AppIdQpsOverFlowError:(18:05:55.282) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 184: Xunfei request failed with Sid: cht000b3fbd@dx1956b98daa6b81a700 code: 11202, msg: AppIdQpsOverFlowError:(21:15:34.439) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 218: Xunfei request failed with Sid: cht000b28af@dx1956cbbc21ab81a700 code: 11202, msg: AppIdQpsOverFlowError:(02:33:19.130) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 272: Xunfei request failed with Sid: cht000ce862@dx1956e55037fb8f2700 code: 11202, msg: AppIdQpsOverFlowError:(10:00:20.096) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 23: Xunfei request failed with Sid: cht000b1e7f@dx1956771d880b81a700 code: 10012, msg: EngineInternalError:(01:54:29.389) engineCode=10910, msg=Engine error;code=1001
+Error in worker 113: Xunfei request failed with Sid: cht000b5272@dx19569d8c6c9b8f3700 code: 11202, msg: AppIdQpsOverFlowError:(13:06:09.225) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`5`N
+Error in worker 147: Xunfei request failed with Sid: cht000b1378@dx1956ab4e222b81c700 code: 11202, msg: AppIdQpsOverFlowError:(17:06:34.146) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 169: Xunfei request failed with Sid: cht000b41f8@dx1956b43d94b9a4b700 code: 11202, msg: AppIdQpsOverFlowError:(19:42:43.532) 2025-03-06 19:42:43.531767033 +0800 CST m=+579.785742569`164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 207: Xunfei request failed with Sid: cht000bf189@dx1956ca75349b8f3700 code: 10012, msg: EngineInternalError:(02:11:00.305) engineCode=10910, msg=Engine error;code=1001
+Error in worker 229: Xunfei request failed with Sid: cht000b064b@dx1956d0be657b81c700 code: 11202, msg: AppIdQpsOverFlowError:(04:00:51.287) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 253: Xunfei request failed with Sid: cht000bdae2@dx1956db77c2db81b700 code: 11202, msg: AppIdQpsOverFlowError:(07:08:16.302) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 266: Xunfei request failed with Sid: cht000bead7@dx1956e545f8eb8f3700 code: 10012, msg: EngineInternalError:(10:00:08.348) engineCode=10910, msg=TimeOut;code=1003
+Error in worker 75: Xunfei request failed with Sid: cht000b41ce@dx195688744919a4b700 code: 11202, msg: AppIdQpsOverFlowError:(06:57:30.258) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 107: Xunfei request failed with Sid: cht000b65f8@dx19569b12205b81c700 code: 11202, msg: AppIdQpsOverFlowError:(12:22:51.141) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 179: Xunfei request failed with Sid: cht000c9c83@dx1956b74974eb8f2700 code: 11202, msg: AppIdQpsOverFlowError:(20:35:57.902) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 204: Xunfei request failed with Sid: cht000bde6b@dx1956c4db6cc9a4b700 code: 11202, msg: AppIdQpsOverFlowError:(00:33:07.276) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 232: Xunfei request failed with Sid: cht000b5add@dx1956d2b49f5b81c700 code: 11202, msg: AppIdQpsOverFlowError:(04:35:08.406) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Error in worker 265: Xunfei request failed with Sid: cht000b2258@dx1956e219c7db8f3700 code: 11202, msg: AppIdQpsOverFlowError:(09:04:11.390) `164b3518`SUBID_164b3518_`xdeepseekr1`tokens.total`125`&`|`tokens.total`_D`#`-1`P`_C`L`-1`#`-1`P`_Q`L`2`q`3`N
+Completed batch 60/60
+All 300 executions completed successfully
+Execution completed in 146842.14 seconds
+Starting dataset processing...
+Found 271 files to process
+Starting parallel execution with 10 workers
+Reading from: /home/wzhangeb/lancet/DatasetGeneration/dialog_history_run_audio
+Writing to: /home/wzhangeb/lancet/DatasetGeneration/processed_interactions_audio
+
+Batch 1/28: Processing files ['user_286.json', 'user_118.json', 'user_110.json', 'user_52.json', 'user_157.json', 'user_20.json', 'user_239.json', 'user_122.json', 'user_148.json', 'user_134.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [10:10<1:31:31, 610.16s/it] 40%|████      | 4/10 [44:42<1:07:32, 675.47s/it] 70%|███████   | 7/10 [2:29:43<1:12:00, 1440.19s/it]100%|██████████| 10/10 [2:29:43<00:00, 898.35s/it]  
+user_286.json processing completed successfully
+user_118.json processing completed successfully
+user_110.json processing completed successfully
+user_52.json processing completed successfully
+user_157.json processing completed successfully
+user_20.json processing completed successfully
+user_239.json processing completed successfully
+user_122.json processing completed successfully
+user_148.json processing completed successfully
+user_134.json processing completed successfully
+Completed batch 1/28
+
+Batch 2/28: Processing files ['user_296.json', 'user_53.json', 'user_39.json', 'user_181.json', 'user_81.json', 'user_60.json', 'user_100.json', 'user_85.json', 'user_82.json', 'user_143.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [16:31<2:28:44, 991.66s/it]100%|██████████| 10/10 [16:31<00:00, 99.17s/it]  
+user_296.json processing completed successfully
+user_53.json processing completed successfully
+user_39.json processing completed successfully
+user_181.json processing completed successfully
+user_81.json processing completed successfully
+user_60.json processing completed successfully
+user_100.json processing completed successfully
+user_85.json processing completed successfully
+user_82.json processing completed successfully
+user_143.json processing completed successfully
+Completed batch 2/28
+
+Batch 3/28: Processing files ['user_146.json', 'user_1.json', 'user_220.json', 'user_133.json', 'user_4.json', 'user_135.json', 'user_109.json', 'user_156.json', 'user_187.json', 'user_285.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [02:18<20:45, 138.35s/it] 20%|██        | 2/10 [10:59<48:28, 363.60s/it] 80%|████████  | 8/10 [12:16<02:21, 70.81s/it] 100%|██████████| 10/10 [18:28<00:00, 103.64s/it]100%|██████████| 10/10 [18:28<00:00, 110.86s/it]
+user_146.json processing completed successfully
+user_1.json processing completed successfully
+user_220.json processing completed successfully
+user_133.json processing completed successfully
+user_4.json processing completed successfully
+user_135.json processing failed with error: <206> InternalError.Algo: An error occurred in model serving, error message is: [The request should be rescheduled.]
+user_109.json processing completed successfully
+user_156.json processing completed successfully
+user_187.json processing completed successfully
+user_285.json processing completed successfully
+Completed batch 3/28
+
+Batch 4/28: Processing files ['user_2.json', 'user_77.json', 'user_258.json', 'user_150.json', 'user_91.json', 'user_151.json', 'user_58.json', 'user_15.json', 'user_182.json', 'user_120.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [10:22<1:33:19, 622.17s/it] 80%|████████  | 8/10 [16:27<03:28, 104.06s/it]  100%|██████████| 10/10 [16:27<00:00, 98.79s/it]
+user_2.json processing completed successfully
+user_77.json processing completed successfully
+user_258.json processing completed successfully
+user_150.json processing completed successfully
+user_91.json processing completed successfully
+user_151.json processing completed successfully
+user_58.json processing completed successfully
+user_15.json processing completed successfully
+user_182.json processing completed successfully
+user_120.json processing completed successfully
+Completed batch 4/28
+
+Batch 5/28: Processing files ['user_10.json', 'user_167.json', 'user_41.json', 'user_262.json', 'user_28.json', 'user_22.json', 'user_86.json', 'user_96.json', 'user_248.json', 'user_252.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [03:40<33:00, 220.09s/it] 30%|███       | 3/10 [09:52<22:45, 195.00s/it] 60%|██████    | 6/10 [14:24<08:44, 131.06s/it]100%|██████████| 10/10 [14:24<00:00, 86.49s/it]
+user_10.json processing completed successfully
+user_167.json processing completed successfully
+user_41.json processing completed successfully
+user_262.json processing completed successfully
+user_28.json processing completed successfully
+user_22.json processing completed successfully
+user_86.json processing completed successfully
+user_96.json processing completed successfully
+user_248.json processing completed successfully
+user_252.json processing completed successfully
+Completed batch 5/28
+
+Batch 6/28: Processing files ['user_190.json', 'user_21.json', 'user_160.json', 'user_210.json', 'user_5.json', 'user_141.json', 'user_137.json', 'user_299.json', 'user_242.json', 'user_18.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [1:43:14<15:29:06, 6194.04s/it]100%|██████████| 10/10 [1:43:14<00:00, 619.40s/it]   
+user_190.json processing completed successfully
+user_21.json processing completed successfully
+user_160.json processing completed successfully
+user_210.json processing completed successfully
+user_5.json processing completed successfully
+user_141.json processing completed successfully
+user_137.json processing completed successfully
+user_299.json processing completed successfully
+user_242.json processing completed successfully
+user_18.json processing completed successfully
+Completed batch 6/28
+
+Batch 7/28: Processing files ['user_90.json', 'user_280.json', 'user_193.json', 'user_69.json', 'user_59.json', 'user_217.json', 'user_98.json', 'user_246.json', 'user_140.json', 'user_16.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [1:22:14<12:20:12, 4934.72s/it]100%|██████████| 10/10 [1:22:14<00:00, 493.47s/it]   
+user_90.json processing completed successfully
+user_280.json processing completed successfully
+user_193.json processing completed successfully
+user_69.json processing completed successfully
+user_59.json processing completed successfully
+user_217.json processing completed successfully
+user_98.json processing completed successfully
+user_246.json processing completed successfully
+user_140.json processing completed successfully
+user_16.json processing completed successfully
+Completed batch 7/28
+
+Batch 8/28: Processing files ['user_62.json', 'user_240.json', 'user_245.json', 'user_99.json', 'user_168.json', 'user_287.json', 'user_31.json', 'user_279.json', 'user_254.json', 'user_176.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [03:54<35:14, 234.89s/it] 20%|██        | 2/10 [04:28<15:31, 116.43s/it] 40%|████      | 4/10 [05:41<06:38, 66.43s/it]  60%|██████    | 6/10 [1:27:28<1:19:36, 1194.15s/it]100%|██████████| 10/10 [1:27:28<00:00, 524.83s/it]  
+user_62.json processing completed successfully
+user_240.json processing completed successfully
+user_245.json processing completed successfully
+user_99.json processing completed successfully
+user_168.json processing completed successfully
+user_287.json processing completed successfully
+user_31.json processing completed successfully
+user_279.json processing completed successfully
+user_254.json processing completed successfully
+user_176.json processing completed successfully
+Completed batch 8/28
+
+Batch 9/28: Processing files ['user_116.json', 'user_95.json', 'user_260.json', 'user_185.json', 'user_35.json', 'user_192.json', 'user_180.json', 'user_83.json', 'user_145.json', 'user_230.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [05:52<52:52, 352.48s/it] 30%|███       | 3/10 [13:35<30:39, 262.73s/it]100%|██████████| 10/10 [13:35<00:00, 81.51s/it]
+user_116.json processing completed successfully
+user_95.json processing completed successfully
+user_260.json processing completed successfully
+user_185.json processing completed successfully
+user_35.json processing completed successfully
+user_192.json processing completed successfully
+user_180.json processing completed successfully
+user_83.json processing completed successfully
+user_145.json processing completed successfully
+user_230.json processing completed successfully
+Completed batch 9/28
+
+Batch 10/28: Processing files ['user_251.json', 'user_178.json', 'user_297.json', 'user_235.json', 'user_223.json', 'user_293.json', 'user_70.json', 'user_40.json', 'user_152.json', 'user_269.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [08:52<1:19:50, 532.30s/it] 60%|██████    | 6/10 [11:38<06:18, 94.60s/it]   100%|██████████| 10/10 [11:38<00:00, 69.89s/it]
+user_251.json processing completed successfully
+user_178.json processing completed successfully
+user_297.json processing completed successfully
+user_235.json processing completed successfully
+user_223.json processing completed successfully
+user_293.json processing completed successfully
+user_70.json processing completed successfully
+user_40.json processing completed successfully
+user_152.json processing completed successfully
+user_269.json processing completed successfully
+Completed batch 10/28
+
+Batch 11/28: Processing files ['user_191.json', 'user_292.json', 'user_166.json', 'user_19.json', 'user_226.json', 'user_196.json', 'user_11.json', 'user_186.json', 'user_34.json', 'user_33.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [02:36<23:26, 156.22s/it] 20%|██        | 2/10 [03:15<11:39, 87.39s/it]  30%|███       | 3/10 [16:28<47:47, 409.66s/it] 50%|█████     | 5/10 [35:21<41:32, 498.53s/it]100%|██████████| 10/10 [35:21<00:00, 212.19s/it]
+user_191.json processing completed successfully
+user_292.json processing completed successfully
+user_166.json processing completed successfully
+user_19.json processing completed successfully
+user_226.json processing completed successfully
+user_196.json processing completed successfully
+user_11.json processing completed successfully
+user_186.json processing completed successfully
+user_34.json processing completed successfully
+user_33.json processing completed successfully
+Completed batch 11/28
+
+Batch 12/28: Processing files ['user_225.json', 'user_130.json', 'user_283.json', 'user_61.json', 'user_162.json', 'user_259.json', 'user_234.json', 'user_212.json', 'user_74.json', 'user_228.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [04:13<37:57, 253.09s/it] 20%|██        | 2/10 [05:56<21:59, 165.00s/it] 30%|███       | 3/10 [23:04<1:05:14, 559.22s/it]100%|██████████| 10/10 [23:04<00:00, 138.48s/it] 
+user_225.json processing completed successfully
+user_130.json processing completed successfully
+user_283.json processing completed successfully
+user_61.json processing completed successfully
+user_162.json processing completed successfully
+user_259.json processing completed successfully
+user_234.json processing completed successfully
+user_212.json processing completed successfully
+user_74.json processing completed successfully
+user_228.json processing completed successfully
+Completed batch 12/28
+
+Batch 13/28: Processing files ['user_203.json', 'user_142.json', 'user_275.json', 'user_26.json', 'user_202.json', 'user_199.json', 'user_63.json', 'user_284.json', 'user_161.json', 'user_173.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [02:23<21:30, 143.39s/it] 20%|██        | 2/10 [04:06<15:55, 119.47s/it] 60%|██████    | 6/10 [04:29<02:07, 31.95s/it]  80%|████████  | 8/10 [17:28<05:17, 158.84s/it]100%|██████████| 10/10 [17:28<00:00, 104.85s/it]
+user_203.json processing completed successfully
+user_142.json processing completed successfully
+user_275.json processing completed successfully
+user_26.json processing completed successfully
+user_202.json processing completed successfully
+user_199.json processing completed successfully
+user_63.json processing completed successfully
+user_284.json processing completed successfully
+user_161.json processing completed successfully
+user_173.json processing completed successfully
+Completed batch 13/28
+
+Batch 14/28: Processing files ['user_79.json', 'user_271.json', 'user_244.json', 'user_206.json', 'user_138.json', 'user_29.json', 'user_213.json', 'user_30.json', 'user_119.json', 'user_127.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [24:37<3:41:34, 1477.14s/it]100%|██████████| 10/10 [24:37<00:00, 147.71s/it]  
+user_79.json processing completed successfully
+user_271.json processing completed successfully
+user_244.json processing completed successfully
+user_206.json processing completed successfully
+user_138.json processing completed successfully
+user_29.json processing completed successfully
+user_213.json processing completed successfully
+user_30.json processing completed successfully
+user_119.json processing completed successfully
+user_127.json processing completed successfully
+Completed batch 14/28
+
+Batch 15/28: Processing files ['user_276.json', 'user_50.json', 'user_76.json', 'user_123.json', 'user_9.json', 'user_132.json', 'user_164.json', 'user_174.json', 'user_12.json', 'user_97.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [08:01<1:12:11, 481.29s/it] 30%|███       | 3/10 [11:28<23:31, 201.70s/it]  100%|██████████| 10/10 [11:28<00:00, 68.90s/it]
+user_276.json processing completed successfully
+user_50.json processing completed successfully
+user_76.json processing completed successfully
+user_123.json processing completed successfully
+user_9.json processing completed successfully
+user_132.json processing completed successfully
+user_164.json processing completed successfully
+user_174.json processing completed successfully
+user_12.json processing completed successfully
+user_97.json processing completed successfully
+Completed batch 15/28
+
+Batch 16/28: Processing files ['user_87.json', 'user_102.json', 'user_172.json', 'user_139.json', 'user_158.json', 'user_278.json', 'user_200.json', 'user_211.json', 'user_117.json', 'user_36.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [1:13:23<11:00:29, 4403.26s/it] 50%|█████     | 5/10 [3:08:04<2:56:39, 2119.84s/it] 100%|██████████| 10/10 [3:08:04<00:00, 1128.42s/it] 
+user_87.json processing completed successfully
+user_102.json processing completed successfully
+user_172.json processing completed successfully
+user_139.json processing completed successfully
+user_158.json processing completed successfully
+user_278.json processing completed successfully
+user_200.json processing completed successfully
+user_211.json processing completed successfully
+user_117.json processing completed successfully
+user_36.json processing completed successfully
+Completed batch 16/28
+
+Batch 17/28: Processing files ['user_290.json', 'user_250.json', 'user_144.json', 'user_54.json', 'user_274.json', 'user_270.json', 'user_224.json', 'user_106.json', 'user_46.json', 'user_289.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [03:55<35:22, 235.80s/it] 30%|███       | 3/10 [06:39<14:12, 121.83s/it] 40%|████      | 4/10 [08:09<11:03, 110.63s/it] 60%|██████    | 6/10 [25:11<20:38, 309.73s/it] 90%|█████████ | 9/10 [41:46<05:21, 321.10s/it]100%|██████████| 10/10 [41:46<00:00, 250.67s/it]
+user_290.json processing completed successfully
+user_250.json processing completed successfully
+user_144.json processing completed successfully
+user_54.json processing completed successfully
+user_274.json processing completed successfully
+user_270.json processing completed successfully
+user_224.json processing completed successfully
+user_106.json processing completed successfully
+user_46.json processing completed successfully
+user_289.json processing completed successfully
+Completed batch 17/28
+
+Batch 18/28: Processing files ['user_219.json', 'user_267.json', 'user_281.json', 'user_131.json', 'user_257.json', 'user_126.json', 'user_171.json', 'user_17.json', 'user_216.json', 'user_124.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [19:04<2:51:39, 1144.41s/it]100%|██████████| 10/10 [19:04<00:00, 114.44s/it]  
+user_219.json processing completed successfully
+user_267.json processing completed successfully
+user_281.json processing completed successfully
+user_131.json processing completed successfully
+user_257.json processing completed successfully
+user_126.json processing completed successfully
+user_171.json processing completed successfully
+user_17.json processing completed successfully
+user_216.json processing completed successfully
+user_124.json processing completed successfully
+Completed batch 18/28
+
+Batch 19/28: Processing files ['user_153.json', 'user_104.json', 'user_67.json', 'user_93.json', 'user_51.json', 'user_129.json', 'user_45.json', 'user_241.json', 'user_215.json', 'user_115.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [04:11<37:40, 251.16s/it] 20%|██        | 2/10 [29:27<2:12:45, 995.63s/it]100%|██████████| 10/10 [29:27<00:00, 176.79s/it] 
+user_153.json processing completed successfully
+user_104.json processing completed successfully
+user_67.json processing completed successfully
+user_93.json processing completed successfully
+user_51.json processing completed successfully
+user_129.json processing completed successfully
+user_45.json processing completed successfully
+user_241.json processing completed successfully
+user_215.json processing completed successfully
+user_115.json processing completed successfully
+Completed batch 19/28
+
+Batch 20/28: Processing files ['user_6.json', 'user_189.json', 'user_273.json', 'user_288.json', 'user_25.json', 'user_108.json', 'user_177.json', 'user_44.json', 'user_214.json', 'user_163.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [02:37<23:41, 157.98s/it] 20%|██        | 2/10 [06:12<25:29, 191.15s/it] 30%|███       | 3/10 [11:42<29:42, 254.63s/it] 40%|████      | 4/10 [26:35<50:38, 506.46s/it]100%|██████████| 10/10 [26:35<00:00, 159.50s/it]
+user_6.json processing completed successfully
+user_189.json processing completed successfully
+user_273.json processing completed successfully
+user_288.json processing completed successfully
+user_25.json processing completed successfully
+user_108.json processing completed successfully
+user_177.json processing completed successfully
+user_44.json processing completed successfully
+user_214.json processing completed successfully
+user_163.json processing completed successfully
+Completed batch 20/28
+
+Batch 21/28: Processing files ['user_78.json', 'user_263.json', 'user_57.json', 'user_149.json', 'user_188.json', 'user_24.json', 'user_8.json', 'user_68.json', 'user_7.json', 'user_0.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [23:53<3:34:57, 1433.11s/it] 80%|████████  | 8/10 [24:30<04:30, 135.12s/it]    90%|█████████ | 9/10 [38:09<04:02, 242.11s/it]100%|██████████| 10/10 [38:09<00:00, 228.92s/it]
+user_78.json processing completed successfully
+user_263.json processing completed successfully
+user_57.json processing completed successfully
+user_149.json processing completed successfully
+user_188.json processing completed successfully
+user_24.json processing completed successfully
+user_8.json processing completed successfully
+user_68.json processing completed successfully
+user_7.json processing completed successfully
+user_0.json processing completed successfully
+Completed batch 21/28
+
+Batch 22/28: Processing files ['user_154.json', 'user_103.json', 'user_195.json', 'user_14.json', 'user_27.json', 'user_231.json', 'user_277.json', 'user_73.json', 'user_94.json', 'user_261.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [05:55<53:17, 355.29s/it] 20%|██        | 2/10 [06:21<21:35, 161.96s/it] 30%|███       | 3/10 [33:59<1:38:32, 844.66s/it] 70%|███████   | 7/10 [1:25:46<39:46, 795.65s/it]100%|██████████| 10/10 [1:25:46<00:00, 514.64s/it]
+user_154.json processing completed successfully
+user_103.json processing completed successfully
+user_195.json processing completed successfully
+user_14.json processing completed successfully
+user_27.json processing completed successfully
+user_231.json processing completed successfully
+user_277.json processing completed successfully
+user_73.json processing completed successfully
+user_94.json processing completed successfully
+user_261.json processing completed successfully
+Completed batch 22/28
+
+Batch 23/28: Processing files ['user_198.json', 'user_136.json', 'user_237.json', 'user_42.json', 'user_255.json', 'user_170.json', 'user_227.json', 'user_47.json', 'user_92.json', 'user_37.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [11:24<1:42:44, 684.95s/it] 50%|█████     | 5/10 [13:57<11:12, 134.51s/it]   70%|███████   | 7/10 [14:08<04:16, 85.62s/it]  90%|█████████ | 9/10 [24:27<02:44, 164.24s/it]100%|██████████| 10/10 [24:27<00:00, 146.77s/it]
+user_198.json processing completed successfully
+user_136.json processing completed successfully
+user_237.json processing completed successfully
+user_42.json processing completed successfully
+user_255.json processing completed successfully
+user_170.json processing completed successfully
+user_227.json processing completed successfully
+user_47.json processing completed successfully
+user_92.json processing completed successfully
+user_37.json processing completed successfully
+Completed batch 23/28
+
+Batch 24/28: Processing files ['user_291.json', 'user_249.json', 'user_264.json', 'user_65.json', 'user_159.json', 'user_247.json', 'user_298.json', 'user_125.json', 'user_80.json', 'user_89.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [07:41<1:09:16, 461.88s/it] 30%|███       | 3/10 [09:51<19:33, 167.58s/it]  100%|██████████| 10/10 [09:51<00:00, 59.10s/it]
+user_291.json processing completed successfully
+user_249.json processing completed successfully
+user_264.json processing completed successfully
+user_65.json processing completed successfully
+user_159.json processing completed successfully
+user_247.json processing completed successfully
+user_298.json processing completed successfully
+user_125.json processing completed successfully
+user_80.json processing completed successfully
+user_89.json processing completed successfully
+Completed batch 24/28
+
+Batch 25/28: Processing files ['user_165.json', 'user_72.json', 'user_233.json', 'user_197.json', 'user_88.json', 'user_105.json', 'user_66.json', 'user_236.json', 'user_64.json', 'user_101.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [08:43<1:18:27, 523.04s/it] 40%|████      | 4/10 [18:47<26:13, 262.30s/it]  100%|██████████| 10/10 [18:47<00:00, 112.74s/it]
+user_165.json processing completed successfully
+user_72.json processing completed successfully
+user_233.json processing completed successfully
+user_197.json processing completed successfully
+user_88.json processing completed successfully
+user_105.json processing completed successfully
+user_66.json processing completed successfully
+user_236.json processing completed successfully
+user_64.json processing completed successfully
+user_101.json processing completed successfully
+Completed batch 25/28
+
+Batch 26/28: Processing files ['user_256.json', 'user_295.json', 'user_222.json', 'user_194.json', 'user_13.json', 'user_56.json', 'user_183.json', 'user_205.json', 'user_55.json', 'user_201.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [34:47<5:13:09, 2087.70s/it]100%|██████████| 10/10 [34:47<00:00, 208.77s/it]  
+user_256.json processing completed successfully
+user_295.json processing completed successfully
+user_222.json processing completed successfully
+user_194.json processing completed successfully
+user_13.json processing completed successfully
+user_56.json processing completed successfully
+user_183.json processing completed successfully
+user_205.json processing completed successfully
+user_55.json processing completed successfully
+user_201.json processing completed successfully
+Completed batch 26/28
+
+Batch 27/28: Processing files ['user_243.json', 'user_114.json', 'user_38.json', 'user_71.json', 'user_121.json', 'user_3.json', 'user_238.json', 'user_48.json', 'user_294.json', 'user_32.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [06:20<57:08, 380.98s/it] 40%|████      | 4/10 [07:53<09:42, 97.07s/it]  60%|██████    | 6/10 [08:29<04:10, 62.59s/it] 70%|███████   | 7/10 [29:24<17:16, 345.66s/it]100%|██████████| 10/10 [29:24<00:00, 176.45s/it]
+user_243.json processing completed successfully
+user_114.json processing completed successfully
+user_38.json processing completed successfully
+user_71.json processing completed successfully
+user_121.json processing completed successfully
+user_3.json processing completed successfully
+user_238.json processing completed successfully
+user_48.json processing completed successfully
+user_294.json processing completed successfully
+user_32.json processing completed successfully
+Completed batch 27/28
+
+Batch 28/28: Processing files ['user_43.json']
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [05:12<00:00, 312.49s/it]100%|██████████| 1/1 [05:12<00:00, 312.49s/it]
+user_43.json processing completed successfully
+Completed batch 28/28
+All 271 files processed
+Execution completed in 70633.66 seconds
+Dataset generation and processing complete!

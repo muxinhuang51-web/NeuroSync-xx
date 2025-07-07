@@ -1,0 +1,5 @@
+# 忽略audio文件夹
+slm/audio/
+slm/results_sft_deepseek_Llama-8B_gpu0
+slm/sft_model_deepseek_ai
+slm/web_result

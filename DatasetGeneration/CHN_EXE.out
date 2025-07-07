@@ -1,0 +1,132 @@
+Found 90 files to process
+Starting parallel execution with 10 workers
+Reading from: /home/wzhangeb/lancet/DatasetGeneration/dialog_history_run_CHN
+Writing to: /home/wzhangeb/lancet/DatasetGeneration/processed_interactions_CHN_1
+
+Batch 1/9: Processing files ['user_52.json', 'user_20.json', 'user_53.json', 'user_39.json', 'user_81.json', 'user_60.json', 'user_85.json', 'user_1.json', 'user_4.json', 'user_77.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [02:36<23:29, 156.66s/it] 20%|██        | 2/10 [17:31<1:18:48, 591.06s/it]100%|██████████| 10/10 [17:31<00:00, 105.18s/it] 
+user_52.json processing completed successfully
+user_20.json processing completed successfully
+user_53.json processing completed successfully
+user_39.json processing completed successfully
+user_81.json processing completed successfully
+user_60.json processing completed successfully
+user_85.json processing completed successfully
+user_1.json processing completed successfully
+user_4.json processing completed successfully
+user_77.json processing completed successfully
+Completed batch 1/9
+
+Batch 2/9: Processing files ['user_91.json', 'user_58.json', 'user_10.json', 'user_28.json', 'user_22.json', 'user_86.json', 'user_96.json', 'user_21.json', 'user_49.json', 'user_90.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [02:03<18:30, 123.42s/it] 20%|██        | 2/10 [05:02<20:48, 156.06s/it] 70%|███████   | 7/10 [08:13<03:02, 60.92s/it] 100%|██████████| 10/10 [08:13<00:00, 49.37s/it]
+user_91.json processing completed successfully
+user_58.json processing completed successfully
+user_10.json processing completed successfully
+user_28.json processing completed successfully
+user_22.json processing completed successfully
+user_86.json processing completed successfully
+user_96.json processing completed successfully
+user_21.json processing completed successfully
+user_49.json processing completed successfully
+user_90.json processing completed successfully
+Completed batch 2/9
+
+Batch 3/9: Processing files ['user_69.json', 'user_59.json', 'user_98.json', 'user_16.json', 'user_62.json', 'user_99.json', 'user_31.json', 'user_75.json', 'user_95.json', 'user_35.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [12:27<1:52:08, 747.56s/it]100%|██████████| 10/10 [12:27<00:00, 74.76s/it]  
+user_69.json processing completed successfully
+user_59.json processing completed successfully
+user_98.json processing completed successfully
+user_16.json processing completed successfully
+user_62.json processing completed successfully
+user_99.json processing completed successfully
+user_31.json processing completed successfully
+user_75.json processing completed successfully
+user_95.json processing completed successfully
+user_35.json processing completed successfully
+Completed batch 3/9
+
+Batch 4/9: Processing files ['user_83.json', 'user_70.json', 'user_40.json', 'user_23.json', 'user_84.json', 'user_19.json', 'user_11.json', 'user_34.json', 'user_33.json', 'user_61.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [03:57<35:33, 237.05s/it] 30%|███       | 3/10 [19:35<47:44, 409.14s/it] 60%|██████    | 6/10 [44:30<30:55, 463.87s/it] 80%|████████  | 8/10 [50:46<12:03, 361.98s/it]100%|██████████| 10/10 [50:46<00:00, 304.61s/it]
+user_83.json processing completed successfully
+user_70.json processing completed successfully
+user_40.json processing completed successfully
+user_23.json processing completed successfully
+user_84.json processing completed successfully
+user_19.json processing completed successfully
+user_11.json processing completed successfully
+user_34.json processing completed successfully
+user_33.json processing completed successfully
+user_61.json processing completed successfully
+Completed batch 4/9
+
+Batch 5/9: Processing files ['user_74.json', 'user_26.json', 'user_63.json', 'user_79.json', 'user_29.json', 'user_30.json', 'user_50.json', 'user_76.json', 'user_9.json', 'user_97.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [04:59<44:52, 299.15s/it] 20%|██        | 2/10 [11:36<47:36, 357.04s/it]100%|██████████| 10/10 [22:01<00:00, 114.22s/it]100%|██████████| 10/10 [22:01<00:00, 132.15s/it]
+user_74.json processing completed successfully
+user_26.json processing completed successfully
+user_63.json processing completed successfully
+user_79.json processing completed successfully
+user_29.json processing completed successfully
+user_30.json processing completed successfully
+user_50.json processing completed successfully
+user_76.json processing completed successfully
+user_9.json processing completed successfully
+user_97.json processing completed successfully
+Completed batch 5/9
+
+Batch 6/9: Processing files ['user_87.json', 'user_36.json', 'user_54.json', 'user_46.json', 'user_17.json', 'user_67.json', 'user_93.json', 'user_51.json', 'user_45.json', 'user_25.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [02:19<20:51, 139.09s/it] 20%|██        | 2/10 [06:43<28:22, 212.76s/it] 40%|████      | 4/10 [08:02<10:25, 104.20s/it] 50%|█████     | 5/10 [19:52<24:18, 291.66s/it] 80%|████████  | 8/10 [20:16<04:19, 129.87s/it] 90%|█████████ | 9/10 [48:54<07:48, 468.98s/it]100%|██████████| 10/10 [48:54<00:00, 293.47s/it]
+user_87.json processing completed successfully
+user_36.json processing completed successfully
+user_54.json processing completed successfully
+user_46.json processing completed successfully
+user_17.json processing completed successfully
+user_67.json processing completed successfully
+user_93.json processing completed successfully
+user_51.json processing completed successfully
+user_45.json processing completed successfully
+user_25.json processing completed successfully
+Completed batch 6/9
+
+Batch 7/9: Processing files ['user_44.json', 'user_78.json', 'user_57.json', 'user_24.json', 'user_8.json', 'user_68.json', 'user_0.json', 'user_14.json', 'user_27.json', 'user_73.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [03:56<35:31, 236.78s/it] 40%|████      | 4/10 [05:07<06:23, 63.99s/it]  90%|█████████ | 9/10 [07:35<00:41, 41.35s/it]100%|██████████| 10/10 [07:35<00:00, 45.59s/it]
+user_44.json processing completed successfully
+user_78.json processing completed successfully
+user_57.json processing completed successfully
+user_24.json processing completed successfully
+user_8.json processing completed successfully
+user_68.json processing completed successfully
+user_0.json processing completed successfully
+user_14.json processing completed successfully
+user_27.json processing completed successfully
+user_73.json processing completed successfully
+Completed batch 7/9
+
+Batch 8/9: Processing files ['user_94.json', 'user_42.json', 'user_47.json', 'user_92.json', 'user_37.json', 'user_65.json', 'user_80.json', 'user_89.json', 'user_72.json', 'user_88.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [03:56<35:29, 236.56s/it] 20%|██        | 2/10 [10:51<45:32, 341.52s/it] 30%|███       | 3/10 [27:50<1:15:57, 651.00s/it] 70%|███████   | 7/10 [35:47<13:19, 266.50s/it]  100%|██████████| 10/10 [35:47<00:00, 214.74s/it]
+user_94.json processing completed successfully
+user_42.json processing completed successfully
+user_47.json processing completed successfully
+user_92.json processing completed successfully
+user_37.json processing completed successfully
+user_65.json processing completed successfully
+user_80.json processing completed successfully
+user_89.json processing completed successfully
+user_72.json processing completed successfully
+user_88.json processing completed successfully
+Completed batch 8/9
+
+Batch 9/9: Processing files ['user_66.json', 'user_64.json', 'user_13.json', 'user_56.json', 'user_55.json', 'user_38.json', 'user_71.json', 'user_48.json', 'user_32.json', 'user_43.json']
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [06:51<1:01:41, 411.23s/it] 20%|██        | 2/10 [15:37<1:03:52, 479.06s/it] 70%|███████   | 7/10 [21:57<07:40, 153.46s/it]  100%|██████████| 10/10 [21:57<00:00, 131.76s/it]
+user_66.json processing completed successfully
+user_64.json processing completed successfully
+user_13.json processing completed successfully
+user_56.json processing completed successfully
+user_55.json processing completed successfully
+user_38.json processing completed successfully
+user_71.json processing completed successfully
+user_48.json processing completed successfully
+user_32.json processing completed successfully
+user_43.json processing completed successfully
+Completed batch 9/9
+All 90 files processed
+Execution completed in 13516.32 seconds

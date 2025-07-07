@@ -1,0 +1,18 @@
+Statistical Comparison: Baseline vs Lancet
+=======================================
+
+Dimension  Baseline Mean   Lancet Mean     Mean Difference t-statistic     p-value        
+--------------------------------------------------------------------------------
+1          4.58            5.75            1.17            2.18            0.05150         (No)
+2          3.83            6.08            2.25            3.28            0.00738         (Yes)
+3          3.67            6.42            2.75            5.25            0.00027         (Yes)
+4          3.83            5.83            2.00            3.32            0.00687         (Yes)
+5          3.33            6.25            2.92            5.24            0.00028         (Yes)
+6          3.08            6.42            3.33            5.61            0.00016         (Yes)
+7          4.08            6.67            2.58            6.49            0.00004         (Yes)
+
+Summary:
+- All dimensions show statistically significant improvements (p < 0.05)
+- The largest improvement is in dimension 6: +3.33 points
+- The smallest improvement is in dimension 1: +1.17 points
+- Average improvement across all dimensions: +2.43 points
