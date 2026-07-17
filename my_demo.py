@@ -1,0 +1,2 @@
+from Graph_Simplification.rest import DataSimplifier, complete_mapping_with_internal_links
+

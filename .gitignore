@@ -3,3 +3,14 @@ slm/audio/
 slm/results_sft_deepseek_Llama-8B_gpu0
 slm/sft_model_deepseek_ai
 slm/web_result
+
+# Python 虚拟环境
+.venv/
+venv/
+
+# Python 编译缓存
+__pycache__/
+*.py[cod]
+
+# 环境变量(API key 绝不能再进仓库)
+.env
