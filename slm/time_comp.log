@@ -1,0 +1,4899 @@
+
+================================================================================
+Testing Local Models
+================================================================================
+
+================================================================================
+Testing Sample 1/2
+================================================================================
+
+--- English Prompt 1 ---
+Prompt: ok so i need to figure out the webpage address of this article i wanna save 😅 can u help me find it?...
+
+Testing DeepSeek_R1_Distill_Llama_8B...
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.45s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.16s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.20s/it]
+
+--- DeepSeek_R1_Distill_Llama_8B Results (English) ---
+Time taken: 53.00 seconds
+Tokens per second: 12.42
+Number of tokens: 658
+Output: Okay, so I need to figure out how to create an intent tree, task graph, and mapping based on the user's message. Let me start by understanding what each of these structures is supposed to represent.
+
+The intent tree is a hierarchical structure that represents the user's goal. The root node is the main intent, and each child node breaks down the subtasks needed to achieve that intent. So, first, I need to identify the main intent from the user's message.
+
+The user is asking for help to find the webpage address of an article on WeChat. They mention that it's on WeChat, but they don't know how to get the link, and they also want to check if it's possible to open it, ensuring it's not blocked. So the main intent here seems to be "Find and Access a Specific Article on WeChat."
+
+Next, I need to break down this main intent into subtasks. The first subtask would be to locate the article's URL on WeChat. The user doesn't know how, so that's a specific task. The second subtask is to check if the article can be accessed, meaning verifying if the URL is accessible and not blocked. So, the intent tree would have two main branches under "Find and Access a Specific Article on WeChat."
+
+Now, moving on to the task graph. This structure shows the flow of tasks and their dependencies. I need to list all the tasks required to accomplish each subtask. For finding the URL, tasks might include searching the article on WeChat, extracting the URL, and perhaps navigating through WeChat's interface if needed. For checking accessibility, tasks would involve making an HTTP request to the URL, handling any redirects, checking for blocks or errors, and providing feedback to the user.
+
+I should map each task with a brief description. Then, create edges between these tasks to show the order and dependencies. For example, searching for the article would lead to extracting the URL, which then leads to checking accessibility.
+
+Finally, the mapping between the intent tree nodes and the task graph nodes needs to be established. Each intent in the tree should correspond to a set of tasks in the graph. So, "Find the Article on WeChat" would map to tasks like searching, extracting, and maybe navigating, while "Check Accessibility" would map to tasks like HTTP request, handling blocks, etc.
+
+I need to ensure that each node in the intent tree has a clear set of tasks in the task graph. No overlaps or missing tasks. Also, the mapping should be one-to-one, meaning each intent's subtasks are covered by specific tasks without ambiguity.
+
+I think I've covered all the steps. Now, I'll structure the intent tree, task graph, and mapping accordingly.
+</think>
+
+Here is the structured breakdown based on the user's message:
+
+### Intent Tree
+
+```json
+{
+  "Find and Access a Specific Article on WeChat": {
+    "Find the Article on WeChat": {},
+    "Check Accessibility of the Article": {}
+  }
+}
+```
+
+### Task Graph
+
+```json
+{
+  "nodes": [
+    {"id": "Node1", "description": "Search for the article on WeChat"},
+    {"id": "Node2", "description": "Extract the article URL"},
+    {"id": "Node3", "description": "Navigate WeChat interface (if needed)"},
+    {"id": "Node4", "description": "Initiate HTTP request to check accessibility"},
+    {"id": "Node5", "description": "Handle redirects and errors (if any)"},
+    {"id": "Node6", "description": "Provide feedback on accessibility"}
+  ],
+  "links": [
+    {"source": "Node1", "target": "Node2", "type": "extractURL"},
+    {"source": "Node2", "target": "Node4", "type": "checkAccess"},
+    {"source": "Node4", "target": "Node5", "type": "handleRedirects"},
+    {"source": "Node5", "target": "Node6", "type": "provideFeedback"}
+  ]
+}
+```
+
+### Mapping
+
+```json
+{
+  "Find and Access a Specific Article on WeChat": {
+    "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6"]
+  },
+  "Find the Article on WeChat": {
+    "nodes": ["Node1", "Node2", "Node3"]
+  },
+  "Check Accessibility of the Article": {
+    "nodes": ["Node4", "Node5", "Node6"]
+  }
+}
+```
+
+This structure ensures that each intent in the tree is mapped to a set of tasks in the graph, clearly defining the flow and dependencies for achieving the user's goal.
+
+Testing DeepSeek_R1_Distill_Qwen_1.5B...
+
+--- DeepSeek_R1_Distill_Qwen_1.5B Results (English) ---
+Time taken: 22.96 seconds
+Tokens per second: 29.49
+Number of tokens: 677
+Output: }
+Alright, I need to figure out how to help the user find the webpage address of an article they want to save on WeChat. They mentioned they don't know how to get the link thingy and if it's even possible to open it, making sure it's not blocked. 
+
+First, I should break down the user's problem into smaller parts. They're looking for a way to get the link to the webpage, which I know involves navigating to the page. So, the initial intent is to open the webpage. Once the webpage is open, they need to save it, which is another step.
+
+I should construct an intent tree where the root node is getting the webpage link. Then, from there, the subtask would be saving the webpage content. So, the intent tree should have two levels: one for getting the link and another for saving the content.
+
+Next, for the task graph, I need to outline the steps involved. First, the user would need to open the webpage link. Once the link is open, they would need to save the content. So, the task graph would have two nodes: one for opening the link and another for saving the content.
+
+For the mapping, each intent in the intent tree should correspond to a task in the task graph. The intent "get the webpage link" should map to the task "open the link," and the intent "save the webpage content" should map to the task "save the content." This one-to-one correspondence ensures that each step is correctly linked.
+
+I also need to consider if the user is aware of WeChat's security measures. They mentioned they don't know how to get the link thingy and if it's even possible to open it without issues. So, I should include a note about WeChat's security regarding links and web content. This will help the user understand any potential issues they might face.
+
+Putting it all together, the intent tree will have two levels, the task graph will have two nodes, and the mapping will establish a direct link between the intents and tasks. This structure should help the user efficiently navigate to the webpage and save it as needed.
+</think>
+
+```json
+intent_tree = {
+    "Get webpage link to save article": {
+        "Open webpage link to access content": {},
+        "Save content from webpage to local folder": {}
+    },
+    "Save webpage content": {
+        "Save content from webpage to local folder": {}
+    }
+}
+
+task_graph = {
+    "nodes": [
+        {"id": "Open webpage link to access content", "description": "Click on the webpage link provided by the user to access the content."},
+        {"id": "Save content from webpage to local folder", "description": "Save the webpage content to the local folder."}
+    ],
+    "links": [
+        {"source": "Open webpage link to access content", "target": "Save content from webpage to local folder", "type": "save"},
+        {"source": "Save content from webpage to local folder", "target": "Open webpage link to access content", "type": "open"}
+    ]
+}
+
+mapping = {
+    "Get webpage link to save article": {
+        "nodes": ["Open webpage link to access content", "Save content from webpage to local folder"]
+    },
+    "Save webpage content": {
+        "nodes": ["Save content from webpage to local folder"]
+    },
+    "Scrape text content and save": {
+        "nodes": ["Open webpage link to access content", "Parse HTML document using BeautifulSoup", "Extract text content and save"]
+    },
+    "Scrape image content and save": {
+        "nodes": ["Open webpage link to access content", "Parse HTML document using BeautifulSoup", "Extract text content and save", "Find all image URLs in the HTML document", "Extract text content and save", "Find all image URLs in the HTML document", "Extract text content and save"]
+    },
+    "Scrape image content and save": {
+        "nodes": ["Open webpage link to access content", "Parse HTML document using BeautifulSoup", "Find all image URLs in the HTML document", "Extract text content and save", "Find all image URLs in the HTML document", "Extract text content and save"]
+    },
+    "Create local folder to save content (if not exist)": {
+        "nodes": ["Save content from webpage to local folder", "Create local folder to save content (if not exist)"]
+    }
+}
+```
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.06s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.38s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.48s/it]
+
+--- DeepSeek_R1_Distill_Qwen_7B Results (English) ---
+Time taken: 41.10 seconds
+Tokens per second: 13.99
+Number of tokens: 575
+Output: <think>
+Okay, so I need to figure out how to help this user find the webpage address of an article they want to save. They mentioned it's on WeChat and they don't know how to get the link. Also, they want to make sure it's possible to open the article and not blocked. Hmm, let me break this down step by step.
+
+First, the user is asking for the webpage address, which suggests they're looking for a URL. Since they mentioned WeChat, I should consider that WeChat has a browser app where users can access web content. Maybe I can guide them through using the WeChat browser to find the link.
+
+But wait, the user is also concerned about whether the article is accessible. They don't want to be blocked, so it's important to check if the link they provide is legitimate and not restricted. I should think about how to verify the legitimacy of the link once it's provided.
+
+So, the main intent here is for the user to get the correct and accessible webpage address of the article. The subtasks would involve guiding them to use the WeChat browser, checking the link's availability, and ensuring it's not blocked.
+
+Let me structure this into an intent tree. The root intent would be "Find and verify the webpage address of the article." Then, the subtasks would include guiding them to use the WeChat browser, checking the link's availability, and ensuring it's not blocked.
+
+For the task graph, each task would be a node, and the dependencies would be how each task leads to the next. For example, using the browser app would be a node, followed by opening the link, then checking for access permissions.
+
+The mapping would link each intent to the corresponding tasks in the graph. So, the main intent maps to all the tasks, and each subtask maps to specific nodes in the graph.
+
+I think I've covered all the necessary parts. Now, I'll put it all together in the required format.
+</think>
+
+### Intent Tree
+
+The overall intent is to guide the user to find and verify the correct and accessible webpage address of the article.
+
+**intent_tree = {**
+    "Find and verify the webpage address of the article": {
+        "Use WeChat browser to search for the article": {},
+        "Check the link's availability and accessibility": {},
+        "Ensure the link is not blocked or restricted": {}
+    }
+}
+
+### Task Graph
+
+The task graph outlines the steps to achieve the intent, with each task as a node and dependencies as edges.
+
+**task_graph = {**
+    "nodes": [
+        {
+            "id": "Node1",
+            "description": "Open WeChat browser"
+        },
+        {
+            "id": "Node2",
+            "description": "Search for the article using the WeChat browser"
+        },
+        {
+            "id": "Node3",
+            "description": "Click on the article link to open it"
+        },
+        {
+            "id": "Node4",
+            "description": "Check if the link is accessible and not blocked"
+        }
+    ],
+    "links": [
+        {
+            "source": "Node1",
+            "target": "Node2",
+            "type": "search"
+        },
+        {
+            "source": "Node2",
+            "target": "Node3",
+            "type": "openLink"
+        },
+        {
+            "source": "Node3",
+            "target": "Node4",
+            "type": "checkAccess"
+        }
+    ]
+}
+
+### Mapping
+
+The mapping connects each intent to its corresponding tasks in the task graph.
+
+**mapping = {**
+    "Find and verify the webpage address of the article": {
+        "nodes": ["Node1", "Node2", "Node3", "Node4"]
+    },
+    "Use WeChat browser to search for the article": {
+        "nodes": ["Node1", "Node2"]
+    },
+    "Check the link's availability and accessibility": {
+        "nodes": ["Node3"]
+    },
+    "Ensure the link is not blocked or restricted": {
+        "nodes": ["Node4"]
+    }
+}
+
+--- Chinese Prompt 1 ---
+Prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！...
+
+Testing DeepSeek_R1_Distill_Llama_8B...
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.92s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.48s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.69s/it]
+Some parameters are on the meta device because they were offloaded to the cpu.
+
+--- DeepSeek_R1_Distill_Llama_8B Results (Chinese) ---
+Time taken: 5885.09 seconds
+Tokens per second: 0.29
+Number of tokens: 1726
+Output: ]
+    )
+    )
+    )
+        嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+    )
+
+    )
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    ).
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    )
+
+    ).
+
+    )
+
+    ).
+
+    ).
+
+    )
+
+    )
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    ).
+
+    )....
+
+Testing DeepSeek_R1_Distill_Qwen_1.5B...
+
+--- DeepSeek_R1_Distill_Qwen_1.5B Results (Chinese) ---
+Time taken: 36.66 seconds
+Tokens per second: 6.66
+Number of tokens: 244
+Output: <think>
+嗯，用户想让我帮忙找到微信文章的链接，而且他试了几次都没成功。他担心链接有问题，想看看能不能打开。看来他可能遇到了链接无法打开的问题，或者不太确定如何正确访问微信文章。
+
+首先，我需要理解用户的需求。他可能正在尝试通过微信文章获取信息，但遇到了问题。他想知道如何找到正确的链接，或者如何验证链接是否有效。也许他是在测试不同的链接来源，或者担心链接的可靠性和完整性。
+
+接下来，我需要考虑如何构建intent tree。intent tree应该从总体意图开始，然后逐步细化到具体的子任务。用户的总体意图可能是“找到微信文章的链接”。然后，这个子任务可以进一步细化为“如何找到微信文章的链接”，“如何验证链接是否有效”，“如何处理链接无效的错误”。
+
+然后是任务图。任务图需要展示代码执行过程中的任务流。首先，用户需要进入微信文章的页面，然后点击链接，然后验证链接是否有效。这可能涉及到几个步骤，比如登录微信，进入文章页面，点击链接，然后验证。
+
+最后是映射，确保每个意图和任务之间的对应关系清晰。比如，“如何找到微信文章的链接”对应的任务包括“如何进入微信”，“如何点击链接”，“如何验证链接是否有效”。每个任务对应一个子任务，确保一一对应，避免遗漏或混淆。
+
+总的来说，我需要构建一个结构化的intent tree，将用户的目标分解成多个具体步骤，然后用任务图和映射来展示这些步骤之间的依赖关系和对应关系。这样用户就能有一个清晰的路径，从总体意图开始，逐步细化到具体的步骤，确保每个步骤都能有效地实现目标。
+</think>
+
+```python
+# 意图树
+intent_tree = {
+    "总体意图": {
+        "如何找到微信文章的链接"
+    },
+    "如何找到微信文章的链接": {
+        "如何进入微信"
+        "如何点击微信文章页面"
+        "如何在微信文章页面找到文章标题和链接"
+    },
+    "如何进入微信": {
+        "如何登录微信"
+        "如何进入微信的App页面"
+    },
+    "如何点击微信文章页面": {
+        "如何在微信App页面找到文章标题"
+        "如何点击文章标题进入文章页面"
+    },
+    "如何在微信文章页面找到文章标题": {
+        "如何查看文章标题"
+        "如何查看文章正文"
+    },
+    "如何验证链接是否有效": {
+        "如何打开链接"
+        "如何验证链接是否有效"
+    },
+    "如何打开链接": {
+        "如何在浏览器中打开链接"
+        "如何在网页中打开链接"
+        "如何在文本框中输入链接"
+    },
+    "如何处理链接无效的错误": {
+        "如何保存链接"
+        "如何查看保存链接的状态"
+        "如何删除链接"
+    },
+    "如何保存链接": {
+        "如何在本地保存链接"
+        "如何复制保存链接"
+        "如何在网页中复制保存链接"
+    },
+    "如何复制保存链接": {
+        "如何复制保存链接到本地文件夹"
+        "如何粘贴保存链接到本地文件夹"
+    },
+    "如何粘贴保存链接到本地文件夹": {
+        "如何在本地文件夹中粘贴链接"
+        "如何在本地文件夹中复制粘贴链接"
+    }
+}
+
+# 任务图
+task_graph = {
+    "nodes": [
+        "进入微信App页面",
+        "找到文章标题",
+        "点击文章标题进入页面",
+        "找到文章链接",
+        "打开链接",
+        "验证链接是否有效",
+        "保存链接",
+        "复制保存链接到本地文件夹",
+        "删除链接",
+        "查看保存链接的状态",
+        "粘贴保存链接到本地文件夹"
+    ],
+    "links": [
+        {
+            "source": "进入微信App页面",
+            "target": "找到文章标题"
+        },
+        {
+            "source": "找到文章标题",
+            "target": "点击文章标题"
+        },
+        {
+            "source": "点击文章标题",
+            "target": "找到文章链接"
+        },
+        {
+            "source": "找到文章链接",
+            "target": "打开链接"
+        },
+        {
+            "source": "打开链接",
+            "target": "验证链接是否有效"
+        },
+        {
+            "source": "验证链接是否有效",
+            "target": "保存链接"
+        },
+        {
+            "source": "保存链接",
+            "target": "复制保存链接到本地文件夹"
+        },
+        {
+            "source": "复制保存链接到本地文件夹",
+            "target": "删除链接"
+        },
+        {
+            "source": "删除链接",
+            "target": "查看保存链接的状态"
+        },
+        {
+            "source": "查看保存链接的状态",
+            "target": "粘贴保存链接到本地文件夹"
+        }
+    ]
+}
+
+# 映射
+mapping = {
+    "如何找到微信文章的链接": {
+        "nodes": [
+            "如何进入微信",
+            "如何找到微信文章页面",
+            "如何点击文章标题进入页面",
+            "如何找到文章链接"
+        ]
+    },
+    "如何进入微信": {
+        "nodes": [
+            "如何登录微信",
+            "如何进入微信App页面"
+        ]
+    },
+    "如何找到微信文章页面": {
+        "nodes": [
+            "如何登录微信",
+            "如何进入微信App页面"
+        ]
+    },
+    "如何点击文章标题进入页面": {
+        "nodes": [
+            "如何找到文章标题"
+        ]
+    },
+    "如何验证链接是否有效": {
+        "nodes": [
+            "如何打开链接",
+            "如何验证链接是否有效"
+        ]
+    },
+    "如何保存链接": {
+        "nodes": [
+            "如何找到文章链接",
+            "如何保存链接"
+        ]
+    },
+    "如何复制保存链接到本地文件夹": {
+        "nodes": [
+            "如何保存链接"
+        ]
+    },
+    "如何粘贴保存链接到本地文件夹": {
+        "nodes": [
+            "如何复制保存链接到本地文件夹",
+            "如何粘贴保存链接到本地文件夹"
+        ]
+    },
+    "如何查看保存链接的状态": {
+        "nodes": [
+            "如何保存链接"
+        ]
+    },
+    "如何删除链接": {
+        "nodes": [
+            "如何删除链接"
+        ]
+    }
+}
+```...
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.20s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.71s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.78s/it]
+
+--- DeepSeek_R1_Distill_Qwen_7B Results (Chinese) ---
+Time taken: 43.59 seconds
+Tokens per second: 4.11
+Number of tokens: 179
+Output: <think>
+好，我现在需要根据用户提供的massage生成intent tree, task graph, 和mapping。首先，我得仔细分析用户的需求。
+
+用户说：“嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！”
+
+看起来用户有两个主要的需求：
+1. 学习如何在微信文章中找到链接。
+2. 测试特定链接是否有效。
+
+接下来，我需要构建intent tree。根节点是“帮助用户找到微信文章的链接”。然后，子任务包括“学习方法”和“测试链接有效性”。
+
+在构建任务图时，每个任务需要有描述，并明确依赖关系。学习方法涉及到访问微信文章，阅读文章，然后复制链接。测试链接则需要打开链接和检查结果。
+
+最后，建立mapping，确保每个意图对应正确的任务节点。学习方法对应访问、阅读、复制三个任务，测试链接对应打开和检查两个任务。
+
+这样，intent tree、task graph和mapping都完成了，可以清晰地展示用户的需求和实现步骤。
+</think>
+
+### Intent Tree
+
+```json
+{
+    "帮助用户找到微信文章的链接": {
+        "学习如何在微信文章中找到链接": {
+            "访问微信文章": {},
+            "阅读文章以获取链接": {},
+            "复制链接到剪贴板": {}
+        },
+        "测试特定链接是否有效": {
+            "打开链接": {},
+            "检查链接是否成功打开": {}
+        }
+    }
+}
+```
+
+### Task Graph
+
+```json
+{
+    "nodes": [
+        {
+            "id": "Node1",
+            "description": "访问微信文章"
+        },
+        {
+            "id": "Node2",
+            "description": "阅读文章以获取链接"
+        },
+        {
+            "id": "Node3",
+            "description": "复制链接到剪贴板"
+        },
+        {
+            "id": "Node4",
+            "description": "打开链接"
+        },
+        {
+            "id": "Node5",
+            "description": "检查链接是否成功打开"
+        }
+    ],
+    "links": [
+        {
+            "source": "Node1", 
+            "target": "Node2",
+            "type": "navigate"
+        },
+        {
+            "source": "Node2", 
+            "target": "Node3",
+            "type": "copy"
+        },
+        {
+            "source": "Node1", 
+            "target": "Node4",
+            "type": "navigate"
+        },
+        {
+            "source": "Node4", 
+            "target": "Node5",
+            "type": "check"
+        }
+    ]
+}
+```
+
+### Mapping
+
+```json
+{
+    "帮助用户找到微信文章的链接": {
+        "nodes": ["Node1", "Node2", "Node3"]
+    },
+    "学习如何在微信文章中找到链接": {
+        "nodes": ["Node1", "Node2", "Node3"]
+    },
+    "测试特定链接是否有效": {
+        "nodes": ["Node4", "Node5"]
+    }
+}
+```
+
+### Explanation
+
+1. **Intent Tree**:
+   - 根节点是“帮助用户找到微信文章的链接”。
+   - 子节点分为“学习如何在微信文章中找到链接”和“测试特定链接是否有效”。
+   - “学习如何在微信文章中找到链接”进一步分为“访问微信文章”、“阅读文章以获取链接”和“复制链接到剪贴板”。
+   - “测试特定链接是否有效”分为“打开链接”和“检查链接是否成功打开”。
+
+2. **Task Graph**:
+   - 包含5个任务节点和4个有向边。
+   - 边表示任务之间的依赖关系，类型包括“navigate”（导航）、“copy”（复制）和“check”（检查）。
+
+3. **Mapping**:
+   - 确保每个意图与相应的任务节点一一对应。
+   - “帮助用户找到微信文章的链接”对应所有任务节点。
+   - “学习如何在微信文章中找到链接”对应访问、阅读和复制任务。
+   - “测试特定链接是否有效”对应打开和检查任务。...
+
+================================================================================
+Testing APIs (Two-step Process) - Sample 1
+================================================================================
+
+--- Qwen API (English) ---
+Total time taken: 62.54 seconds
+Tokens per second: 14.10
+Number of tokens: 882
+Generated code: To address the user's request, we need to create a Python script that can:
+
+1. Extract the webpage address (URL) of an article shared on WeChat.
+2. Validate whether the URL is accessible (not blocked ...
+Final output: ```JSON_RESULT
+{
+    "intent_tree": {
+        "Find and validate the webpage address of an article shared on WeChat": {
+            "Extract the URL from user-provided text": {},
+            "Check if...
+
+--- Qwen API (Chinese) ---
+Total time taken: 57.59 seconds
+Tokens per second: 4.97
+Number of tokens: 286
+Generated code: 以下是一个 Python 代码示例，使用 `input` 获取用户输入，并通过简单的逻辑处理和正则表达式提取微信文章链接。同时，代码会尝试验证链接是否有效（通过 HTTP 请求检查状态码）。以下是完整的实现：
+
+```python
+import re
+import requests
+
+def extract_wechat_article_link(text):
+    """
+    提取文本中的...
+Final output: ```JSON_RESULT
+{
+    "intent_tree": {
+        "帮助用户找到微信文章链接并验证其有效性": {
+            "从用户输入中提取微信文章链接": {},
+            "验证提取的链接是否有效": {}
+        }
+    },
+    "task_graph": {
+        "nodes": [
+         ...
+
+--- Spark API (DeepSeek R1) (English) ---
+Total time taken: 376.17 seconds
+Tokens per second: 1.64
+Number of tokens: 616
+Generated code: 
+
+Here's a Python script to help retrieve and check a WeChat article URL:
+
+```python
+import requests
+from urllib.parse import urlparse
+
+def get_wechat_url():
+    # Instructions for getting the URL
+   ...
+Final output: 
+
+```JSON_RESULT
+{
+    "intent_tree": {
+        "Retrieve and verify the URL of a WeChat article": {
+            "Guide user to retrieve the WeChat article URL": {},
+            "Check URL accessibili...
+
+--- Spark API (DeepSeek R1) (Chinese) ---
+Total time taken: 210.45 seconds
+Tokens per second: 1.19
+Number of tokens: 250
+Generated code: 
+
+我理解您需要两个功能：1.获取微信文章链接的方法 2.检查链接有效性。以下是Python实现方案：
+
+```python
+import requests
+from urllib.parse import urlparse
+
+def get_wechat_link_guide():
+    """微信文章链接获取指引"""
+    print("\n【微信文章链接获取步骤】")
+    step...
+Final output: 
+
+```JSON_RESULT
+{
+    "intent_tree": {
+        "获取微信文章链接并验证其有效性": {
+            "获取微信文章链接的步骤指引": {},
+            "检查链接有效性": {}
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id...
+
+================================================================================
+Testing Sample 2/2
+================================================================================
+
+--- English Prompt 2 ---
+Prompt: hey can u help me find the webpage address for the article i wanna save? its on wechat but i cant fi...
+
+Testing DeepSeek_R1_Distill_Llama_8B...
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.32s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.44s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.72s/it]
+Some parameters are on the meta device because they were offloaded to the cpu.
+
+--- DeepSeek_R1_Distill_Llama_8B Results (English) ---
+Time taken: 1310.57 seconds
+Tokens per second: 0.42
+Number of tokens: 549
+Output: Alright, I need to create an intent tree, task graph, and mapping based on the user's message. Let me start by understanding the user's request.
+
+First, the user is asking for help to find the webpage address for an article on WeChat. They mention that they can't figure out how to get the exact link and also want to check if the article opens properly. So, the main intent here is to locate the article's webpage URL on WeChat and verify its accessibility.
+
+Next, I'll break down the overall intent into subtasks. The first subtask is to find the exact webpage address. Since the article is on WeChat, the user might need guidance on how to navigate to it within the app. The second subtask is to check if the article actually opens properly, which implies ensuring the link is valid and accessible.
+
+Now, for the task graph, I need to outline the steps required to achieve each subtask. For finding the webpage address, the tasks might include guiding the user through WeChat's interface, identifying where the article is located, and extracting the link. For verifying the link, tasks could involve checking the link's validity, perhaps through a browser or an online tool, and ensuring the article can be accessed.
+
+Finally, I'll map each node in the intent tree to the corresponding tasks in the task graph. Each subtask should correspond to a set of tasks that accomplish it.
+
+I should make sure that the intent tree is hierarchical, with the main intent at the top and the subtasks as children. The task graph will have nodes representing each task and edges showing dependencies, like how one task leads to another. The mapping ensures that each intent directly corresponds to specific tasks in the graph.
+
+I think I've covered all aspects of the user's request. Now, I'll structure the intent tree, task graph, and mapping accordingly.
+       
+
+
+### Intent Tree
+
+The root intent is the user's request to find the webpage address and verify the article. It is divided into two main subtasks: finding the URL and verifying the article.
+
+```json
+intent_tree = {
+    "Find and verify the article's webpage address on WeChat": {
+        "Find the exact webpage address": {},
+        "Verify the article's accessibility": {}
+    }
+}
+```
+
+### Task Graph
+
+The task graph outlines the steps needed to execute each subtask. It includes nodes for each task and edges indicating task dependencies.
+
+```json
+task_graph = {
+    "nodes": [
+        {"id": "Node1", "description": "Guide user through WeChat interface to locate the article"},
+        {"id": "Node2", "description": "Identify the article's location within WeChat"},
+        {"id": "Node3", "description": "Extract the article's webpage address"},
+        {"id": "Node4", "description": "Check the extracted URL for validity"},
+        {"id": "Node5", "description": "Access the article using the extracted URL to verify it opens properly"}
+    ],
+    "links": [
+        {"source": "Node1", "target": "Node2", "type": "navigate"},
+        {"source": "Node2", "target": "Node3", "type": "locate"},
+        {"source": "Node3", "target": "Node4", "type": "checkValidity"},
+        {"source": "Node4", "target": "Node5", "type": "accessArticle"}
+    ]
+}
+```
+
+### Mapping
+
+The mapping ensures each intent corresponds to specific tasks in the task graph.
+
+```json
+mapping = {
+    "Find and verify the article's webpage address on WeChat": {
+        "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5"]
+    },
+    "Find the exact webpage address": {
+        "nodes": ["Node1", "Node2", "Node3"]
+    },
+    "Verify the article's accessibility": {
+        "nodes": ["Node4", "Node5"]
+    }
+}
+```
+
+Testing DeepSeek_R1_Distill_Qwen_1.5B...
+
+--- DeepSeek_R1_Distill_Qwen_1.5B Results (English) ---
+Time taken: 15.22 seconds
+Tokens per second: 19.05
+Number of tokens: 290
+Output: }
+</think>
+
+### Intent Tree
+
+The intent tree is constructed by analyzing the user's request to extract the webpage address for a specific article. The overall intent is to locate the webpage address, and the subtask is to find the exact link.
+
+```plaintext
+intent_tree = {
+    "Find webpage address for an article I wanna save": {
+        "Find webpage address": {},
+        "Extract link from article": {}
+    }
+}
+```
+
+### Task Graph
+
+The task graph organizes the steps to locate the webpage address and check if the article opens properly.
+
+```plaintext
+task_graph = {
+    "nodes": [
+        {"id": "node1", "description": "Extract URL from article title or content"},
+        {"id": "node2", "description": "Parse the extracted URL using BeautifulSoup"},
+        {"id": "node3", "description": "Extract link from the parsed URL"},
+        {"id": "node4", "description": "Check if the article opens properly by opening the link"},
+        {"id": "node5", "description": "Save the link to a local file"}
+    ],
+    "links": [
+        {"source": "node1", "target": "node2", "type": "extractURL"},
+        {"source": "node2", "target": "node3", "type": "extractLink"},
+        {"source": "node3", "target": "node4", "type": "openLink"},
+        {"source": "node4", "target": "node5", "type": "saveLink"}
+    ]
+}
+```
+
+### Mapping
+
+This mapping establishes the correspondence between the intent tree and the task graph nodes.
+
+```plaintext
+mapping = {
+    "Find webpage address for an article I wanna save": {
+        "nodes": ["node1", "node2", "node3", "node4", "node5", "node6"]
+    },
+    "Extract URL from an article title or content": {
+        "nodes": ["node1", "node2", "node3", "node6"]
+    },
+    "Parse the extracted URL using BeautifulSoup": {
+        "nodes": ["node1", "node2", "node3", "node6"]
+    },
+    "Extract link from the parsed URL": {
+        "nodes": ["node1", "node2", "node3", "node6"]
+    },
+    "Check if the article opens properly by opening the link": {
+        "nodes": ["node2", "node3", "node4", "node5", "node6"]
+    },
+    "Save the link to a local file": {
+        "nodes": ["node2", "node3", "node4", "node5", "node6"]
+    }
+}
+```
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.27s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.68s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.77s/it]
+
+--- DeepSeek_R1_Distill_Qwen_7B Results (English) ---
+Time taken: 60.63 seconds
+Tokens per second: 12.37
+Number of tokens: 750
+Output: <think>
+Okay, so I need to help the user by generating an intent tree, task graph, and mapping based on their message. Let me start by understanding their query.
+
+The user says: "hey can u help me find the webpage address for the article i wanna save? its on wechat but i cant figure out how to get the exact link 😫 also can u check if the article actually opens properly? thx!"
+
+First, I'll parse this into intents. The user is asking for two main things: finding the webpage address on WeChat and checking if the article opens properly. So, I'll split this into two intents.
+
+For each intent, I'll identify the subtasks. For finding the link on WeChat, the subtasks might be identifying the article, copying the link, and opening WeChat. For checking if the article opens, it's about opening the link and verifying access.
+
+Next, I'll create the intent tree. The root will be "Find and verify webpage address for the article." Then, each intent will be a child node with its subtasks.
+
+Moving on to the task graph. I'll need to list each task as a node and show dependencies. For example, finding the article must come before copying the link, and opening WeChat before copying. Similarly, opening the link is before verifying access.
+
+Finally, the mapping will link each intent to its corresponding tasks in the task graph. Each intent's nodes should map directly to the relevant tasks without including unrelated ones.
+
+I think that covers everything. Let me put it all together step by step.
+</think>
+
+### Intent Tree
+
+The intent tree represents the overall goal and its subtasks. The root node is the overarching intent, and the child nodes represent the specific subtasks required to achieve it.
+
+```json
+intent_tree = {
+    "Find and verify webpage address for the article": {
+        "Identify the article in WeChat": {},
+        "Copy the webpage address of the article": {},
+        "Open WeChat to find the article": {},
+        "Verify if the article can be opened properly": {},
+        "Open the webpage link in a browser": {},
+        "Check if the article is accessible"
+    }
+}
+```
+
+### Task Graph
+
+The task graph represents the flow of tasks and their dependencies. Each node represents a task, and edges represent dependencies between tasks.
+
+```json
+task_graph = {
+    "nodes": [
+        {
+            "id": "Node1",
+            "description": "Identify the article in WeChat"
+        },
+        {
+            "id": "Node2",
+            "description": "Copy the webpage address of the article"
+        },
+        {
+            "id": "Node3",
+            "description": "Open WeChat to find the article"
+        },
+        {
+            "id": "Node4",
+            "description": "Verify if the article can be opened properly"
+        },
+        {
+            "id": "Node5",
+            "description": "Open the webpage link in a browser"
+        },
+        {
+            "id": "Node6",
+            "description": "Check if the article is accessible"
+        }
+    ],
+    "links": [
+        {
+            "source": "Node1", 
+            "target": "Node2",
+            "type": "identifyArticle"
+        },
+        {
+            "source": "Node1",
+            "target": "Node3",
+            "type": "openWeChat"
+        },
+        {
+            "source": "Node2",
+            "target": "Node3",
+            "type": "copyLink"
+        },
+        {
+            "source": "Node3",
+            "target": "Node5",
+            "type": "openBrowser"
+        },
+        {
+            "source": "Node5",
+            "target": "Node6",
+            "type": "checkAccess"
+        },
+        {
+            "source": "Node3",
+            "target": "Node4",
+            "type": "checkWeChatOpenness"
+        }
+    ]
+}
+```
+
+### Mapping
+
+The mapping establishes a one-to-one correspondence between each intent and its corresponding subgraph in the task graph.
+
+```json
+mapping = {
+    "Find and verify webpage address for the article": {
+        "nodes": ["Node1", "Node2", "Node3", "Node5", "Node6"]
+    },
+    "Identify the article in WeChat": {
+        "nodes": ["Node1", "Node3"]
+    },
+    "Copy the webpage address of the article": {
+        "nodes": ["Node2"]
+    },
+    "Open WeChat to find the article": {
+        "nodes": ["Node3"]
+    },
+    "Verify if the article can be opened properly": {
+        "nodes": ["Node4"]
+    },
+    "Open the webpage link in a browser": {
+        "nodes": ["Node5"]
+    },
+    "Check if the article is accessible": {
+        "nodes": ["Node6"]
+    }
+}
+```
+
+### Explanation
+
+1. **Intent Tree**:
+   - The root intent is "Find and verify webpage address for the article."
+   - Child intents include identifying the article in WeChat, copying the webpage address, opening WeChat, verifying if the article can be opened properly, opening the webpage link in a browser, and checking if the article is accessible.
+
+2. **Task Graph**:
+   - Nodes represent tasks such as identifying the article, copying the address, opening WeChat, verifying access, opening the browser, and checking accessibility.
+   - Edges show dependencies, such as identifying the article before copying the address, opening WeChat before copying the address, and so on.
+
+3. **Mapping**:
+   - Each intent is mapped to its corresponding subgraph in the task graph.
+   - For example, "Identify the article in WeChat" is mapped to tasks "Node1" (identify the article) and "Node3" (open WeChat).
+
+--- Chinese Prompt 2 ---
+Prompt: 我需要找到微信文章的链接，然后确认是不是我要的文章，能帮我写个代码吗？我觉得应该不难吧！希望快点搞定 😊...
+
+Testing DeepSeek_R1_Distill_Llama_8B...
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.30s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.44s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.72s/it]
+Some parameters are on the meta device because they were offloaded to the cpu.
+
+--- DeepSeek_R1_Distill_Llama_8B Results (Chinese) ---
+Time taken: 3230.30 seconds
+Tokens per second: 0.08
+Number of tokens: 264
+Output: }
+    }
+    
+    首先，我需要明确用户的总体意图。用户说：“我需要找到微信文章的链接，然后确认是不是我要的文章，能帮我写个代码吗？我觉得应该不难吧！希望快点搞定 😊” 这里的总体意图是帮助用户编写代码来完成特定的任务，也就是编写一个爬虫程序来从微信获取文章链接，并确认这些链接是否符合用户需求。
+
+接下来，我需要从用户的需求中抽象出具体的子任务或要求。用户明确提到了两件事：第一，找到微信文章的链接；第二，确认这些链接是否符合用户的需求。因此，总体意图可以分解为两个主要子任务：爬取微信文章的链接，和确认这些链接是否正确。
+
+然后，我需要将这些子任务组织成树状图，形成一个意图树。总体意图“编写一个爬虫程序来从微信获取文章链接并确认是否正确”作为根节点，它有两个子节点：爬取微信文章的链接，和确认链接是否正确。
+
+接下来是任务图的构建。任务图需要展示代码执行过程中的各个任务及其依赖关系。首先，需要发起HTTP请求来获取微信文章的页面内容。然后，使用BeautifulSoup解析HTML文档，提取文章链接。接着，可能需要处理多个页面，继续爬取链接。最后，确认链接是否正确，可能需要保存这些链接到文件中，或者检查链接是否有效。
+
+任务图中的节点包括发起HTTP请求（Node1）、使用BeautifulSoup解析HTML（Node2）、提取文章链接（Node3）、处理多个页面（Node4）、确认链接是否正确（Node5）、创建保存文件夹（Node6）。任务之间的依赖关系如下：Node1的输出数据传递给Node2，Node2的输出传递给Node3和Node4，Node3的数据传递给Node5，Node4的数据也传递给Node5，Node6可能在Node3和Node5之间作为准备阶段。
+
+最后，进行意图与任务的映射，确保每个意图对应正确的任务集。总体意图对应所有任务节点；爬取文章链接对应Node1到Node4，确认链接对应Node5到Node6。
+
+总结来说，通过分析用户需求，分解成具体的子任务，组织成意图树，并构建任务图，最后进行一一对应，确保系统能够准确理解并执行用户的请求。
+        {
+            "intent_tree": {
+                "编写一个爬虫程序来从微信获取文章链接并确认是否正确": {
+                    "爬取微信文章的链接": {},
+                    "确认链接是否正确": {}
+                }
+            },
+            "task_graph": {
+                "nodes": [
+                    {"id": "Node1", "description": "发起HTTP请求以获取微信文章页面的内容"},
+                    {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+                    {"id": "Node3", "description": "提取文章链接并保存到列表中"},
+                    {"id": "Node4", "description": "处理多个页面（如果有更多页面需要爬取）"},
+                    {"id": "Node5", "description": "确认链接是否正确并保存到文件中"},
+                    {"id": "Node6", "description": "创建保存链接的本地文件夹（如果不存在）"}
+                ],
+                "links": [
+                    {"source": "Node1", "target": "Node2", "type": "parse"},
+                    {"source": "Node2", "target": "Node3", "type": "extractLinks"},
+                    {"source": "Node2", "target": "Node4", "type": "handleMultiplePages"},
+                    {"source": "Node3", "target": "Node5", "type": "saveLinks"},
+                    {"source": "Node4", "target": "Node5", "type": "saveLinks"},
+                    {"source": "Node5", "target": "Node6", "type": "createFolder"},
+                    {"source": "Node6", "target": "Node3", "type": "saveLinks"},
+                    {"source": "Node6", "target": "Node5", "type": "saveLinks"}
+                ]
+            },
+            "mapping": {
+                "编写一个爬虫程序来从微信获取文章链接并确认是否正确": {
+                    "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6"]
+                },
+                "爬取微信文章的链接": {
+                    "nodes": ["Node1", "Node2", "Node3", "Node4"]
+                },
+                "确认链接是否正确": {
+                    "nodes": ["Node5", "Node6"]
+                }
+            }
+        }
+    }
+    ```
+    看起来您已经给出了一个完整的结构化输出，可能需要进一步确认是否正确。让我仔细检查一下。
+
+首先，intent_tree部分是否正确反映了用户的需求。用户的主要意图是编写一个爬虫程序来从微信获取文章链接并确认是否正确，这确实分解成了两个子任务：爬取链接和确认链接。
+
+接下来，task_graph部分。节点是否覆盖了用户提到的所有步骤？发起HTTP请求（Node1），解析HTML（Node2），提取链接（Node3），处理多个页面（Node4），确认链接（Node5），创建文件夹（Node6）。这些都符合用户需求。
+
+任务之间的依赖关系是否正确？Node1数据传递给Node2，Node2的数据传递给Node3和Node4，Node3和Node4的数据传递给Node5，Node5的数据传递给Node6，Node6也传递给Node3和Node5。这看起来合理，确保数据流向正确。
+
+最后，mapping部分是否正确映射了每个意图到对应的任务节点。总体意图对应所有节点，爬取链接对应前四个节点，确认链接对应最后两个节点。这也符合逻辑。
+
+总的来说，结构是正确的，符合用户需求和构建方法的要求。
+</think>
+
+好的，根据您的需求和构建方法，我为您生成了以下结构化输出：
+
+```json
+{
+    "intent_tree": {
+        "编写一个爬虫程序来从微信获取文章链接并确认是否正确": {
+            "爬取微信文章的链接": {},
+            "确认链接是否正确": {}
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取微信文章页面的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "提取文章链接并保存到列表中"},
+            {"id": "Node4", "description": "处理多个页面（如果有更多页面需要爬取）"},
+            {"id": "Node5", "description": "确认链接是否正确并保存到文件中"},
+            {"id": "Node6", "description": "创建保存链接的本地文件夹（如果不存在）"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractLinks"},
+            {"source": "Node2", "target": "Node4", "type": "handleMultiplePages"},
+            {"source": "Node3", "target": "Node5", "type": "saveLinks"},
+            {"source": "Node4", "target": "Node5", "type": "saveLinks"},
+            {"source": "Node5", "target": "Node6", "type": "createFolder"},
+            {"source": "Node6", "target": "Node3", "type": "saveLinks"},
+            {"source": "Node6", "target": "Node5", "type": "saveLinks"}
+        ]
+    },
+    "mapping": {
+        "编写一个爬虫程序来从微信获取文章链接并确认是否正确": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6"]
+        },
+        "爬取微信文章的链接": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4"]
+        },
+        "确认链接是否正确": {
+            "nodes": ["Node5", "Node6"]
+        }
+    }
+}
+```
+
+这个结构化输出包括了意图树、任务图和映射，完整地描述了从用户需求到代码执行的流程。每个部分都按照您的要求进行了详细构建，确保每个节点和边都准确反映了用户的需求和代码执行的逻辑流程。...
+
+Testing DeepSeek_R1_Distill_Qwen_1.5B...
+
+--- DeepSeek_R1_Distill_Qwen_1.5B Results (Chinese) ---
+Time taken: 13.62 seconds
+Tokens per second: 5.58
+Number of tokens: 76
+Output: <think>
+嗯，用户的问题是关于微信文章链接的，然后他希望找到链接，确认是否是特定文章，最后想让我帮忙写个代码。首先，我需要理解他的需求，他可能是在寻找一篇特定的文章，或者是在验证某个链接是否正确。他提到“不难”，所以可能他不太需要复杂的代码，但需要一个基础的脚本来帮助他。
+
+接下来，我得考虑如何将这个需求转化为意图树。用户的总体意图应该是“查找微信文章链接”，然后进一步细化到“确认文章是否正确”。所以意图树的结构应该是这样的，根节点是总体意图，然后子节点是具体的步骤。
+
+然后是任务图。我需要提取用户输入中的关键步骤，比如“查找链接”、“确认是否正确”、“写代码”。这些任务需要有明确的数据流，比如从网页中提取链接，然后判断内容是否正确，最后编写代码。任务图应该展示这些任务之间的依赖关系，比如确认是否正确后才能写代码。
+
+最后是映射，每个意图树节点对应任务图中的子任务。比如“查找链接”对应“查找链接”，“确认是否正确”对应“确认是否正确”，“写代码”对应“写代码”。这样每个步骤都有对应的任务，确保任务图和意图树的一一对应。
+
+整个过程中，我需要确保意图树和任务图的结构清晰，映射准确，这样用户在使用时就能正确执行步骤，不会有遗漏或错误。
+</think>
+
+```json
+intent_tree = {
+    "查找微信文章链接": {
+        "确认文章是否正确": {},
+        "写代码": {}
+    }
+}
+
+task_graph = {
+    "nodes": [
+        {"id": "Node1", "description": "查找微信文章链接"},
+        {"id": "Node2", "description": "确认文章是否正确"},
+        {"id": "Node3", "description": "写代码"}
+    ],
+    "links": [
+        {"source": "Node1", "target": "Node2", "type": "parse"},
+        {"source": "Node2", "target": "Node3", "type": "write-code"}
+    ]
+}
+
+mapping = {
+    "查找微信文章链接": {
+        "nodes": ["Node1", "Node2", "Node3"]
+    },
+    "确认文章是否正确": {
+        "nodes": ["Node2", "Node3"]
+    },
+    "写代码": {
+        "nodes": ["Node3"]
+    }
+}
+```...
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.91s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.49s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:07<00:00,  3.56s/it]
+
+--- DeepSeek_R1_Distill_Qwen_7B Results (Chinese) ---
+Time taken: 60.22 seconds
+Tokens per second: 3.37
+Number of tokens: 203
+Output: <think>
+嗯，用户发来一个请求，让我帮他生成intent tree、task graph和mapping。首先，我需要仔细分析他的query内容，理解他的需求。他写的是：“我需要找到微信文章的链接，然后确认是不是我要的文章，能帮我写个代码吗？我觉得应该不难吧！希望快点搞定 😊”
+
+好的，首先，我要确定用户的总体意图是什么。他想写一个代码，找到微信文章的链接，然后确认是否是自己需要的。所以，总体意图应该是“写一个Python代码，帮助用户查找微信文章的链接并确认是否需要”。
+
+接下来，我要分解这个总体意图，找出具体的子任务。用户需要完成的动作包括：1. 找到微信文章的链接；2. 确认是否是自己需要的；3. 写代码。因此，intent_tree的根节点就是“写一个Python代码，帮助用户查找微信文章的链接并确认是否需要”，然后子节点分别是“查找微信文章的链接”和“确认是否需要”。
+
+然后，构建任务图。任务图需要列出所有需要执行的任务，并展示它们之间的依赖关系。任务包括：发起微信文章的API请求、解析JSON数据、提取文章链接、获取文章标题和描述、比较输入关键词和文章标题、编写代码、测试代码、生成代码文件。这些任务之间有明显的依赖关系，比如在提取链接后需要比较标题和关键词，才能决定是否需要继续。
+
+最后，构建mapping，确保意图树中的每个节点对应到任务图中的相应子图。根节点对应整个任务图，子节点对应各自相关的任务部分。
+
+现在，我需要检查是否有遗漏的地方。比如，用户提到的是Python代码，所以任务图中的代码编写任务是否正确？是的，已经包含在任务中。确认是否需要的部分是否正确分解？是的，包括了提取标题、输入关键词比较等步骤。任务之间的依赖关系是否正确？比如，必须先提取链接才能比较标题，这些都考虑到了。
+
+总的来说，这个intent tree、task graph和mapping是否全面覆盖了用户的需求？我认为是的。用户的需求是写一个代码，查找链接并确认，所以这些结构应该能满足他的要求。
+</think>
+
+### Intent Tree
+
+```python
+intent_tree = {
+    "写一个Python代码，帮助用户查找微信文章的链接并确认是否需要": {
+        "查找微信文章的链接": {
+            "发起微信文章API请求": {},
+            "解析JSON数据": {},
+            "提取文章链接": {}
+        },
+        "确认是否需要": {
+            "获取文章标题和描述": {},
+            "比较输入关键词和文章标题": {},
+            "编写代码": {},
+            "测试代码": {},
+            "生成代码文件": {}
+        }
+    }
+}
+```
+
+### Task Graph
+
+```task_graph = {
+    "nodes": [
+        {"id": "Node1", "description": "发起微信文章API请求以获取文章信息"},
+        {"id": "Node2", "description": "解析微信文章返回的JSON数据"},
+        {"id": "Node3", "description": "提取文章链接信息"},
+        {"id": "Node4", "description": "获取文章标题和描述信息"},
+        {"id": "Node5", "description": "比较输入关键词和文章标题以确认是否需要"},
+        {"id": "Node6", "description": "编写Python代码实现上述功能"},
+        {"id": "Node7", "description": "测试代码的执行效果"},
+        {"id": "Node8", "description": "生成并返回代码文件"}
+    ],
+    "links": [
+        {"source": "Node1", "target": "Node2", "type": "parse"},
+        {"source": "Node2", "target": "Node3", "type": "extract Links"},
+        {"source": "Node2", "target": "Node4", "type": "extract Content"},
+        {"source": "Node4", "target": "Node5", "type": "compare Keywords"},
+        {"source": "Node5", "target": "Node6", "type": "write code"},
+        {"source": "Node6", "target": "Node7", "type": "test code"},
+        {"source": "Node7", "target": "Node8", "type": "generate code"}
+    ]
+}
+```
+
+### Mapping
+
+```python
+mapping = {
+    "写一个Python代码，帮助用户查找微信文章的链接并确认是否需要": {
+        "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8"]
+    },
+    "查找微信文章的链接": {
+        "nodes": ["Node1", "Node2", "Node3"]
+    },
+    "确认是否需要": {
+        "nodes": ["Node4", "Node5", "Node6", "Node7", "Node8"]
+    }
+}
+```
+
+### 说明
+
+1. **Intent Tree**：
+   - 根节点是“写一个Python代码，帮助用户查找微信文章的链接并确认是否需要”。
+   - 子节点分为“查找微信文章的链接”和“确认是否需要”两个任务。
+
+2. **Task Graph**：
+   - 包含8个任务节点，分别对应API请求、JSON解析、链接提取、标题提取、关键词比较、代码编写、代码测试和代码生成。
+   - 任务之间有明确的依赖关系，例如在提取链接后才进行关键词比较，代码编写依赖于前面所有任务的完成。
+
+3. **Mapping**：
+   - 确保每个意图树节点与任务图中的相应子图一一对应。
+   - 根节点对应整个任务图，子节点对应各自相关的任务部分。...
+
+================================================================================
+Testing APIs (Two-step Process) - Sample 2
+================================================================================
+
+--- Qwen API (English) ---
+Total time taken: 70.31 seconds
+Tokens per second: 13.01
+Number of tokens: 915
+Generated code: To implement the functionality described in the user input, we need to create a program that:
+
+1. Extracts or retrieves the webpage address (URL) of an article from WeChat.
+2. Validates whether the ar...
+Final output: ```JSON_RESULT
+{
+    "intent_tree": {
+        "Find and validate the webpage address for a WeChat article": {
+            "Extract the URL of the WeChat article from user input": {},
+            "Vali...
+
+--- Qwen API (Chinese) ---
+Total time taken: 56.42 seconds
+Tokens per second: 5.00
+Number of tokens: 282
+Generated code: 根据你的描述，用户希望找到微信文章的链接，并确认是否是目标文章。我们可以编写一个简单的 Python 脚本来实现这一功能。以下是代码的实现思路和具体代码：
+
+### 实现思路：
+1. **获取用户输入**：让用户输入可能包含微信文章链接的文本。
+2. **提取链接**：使用正则表达式从用户输入中提取所有可能的 URL。
+3. **过滤微信文章链接**：微信文章链接通常以 `https://mp.w...
+Final output: ```JSON_RESULT
+{
+    "intent_tree": {
+        "找到微信文章的链接并确认是否是目标文章": {
+            "从文本中提取微信文章链接": {},
+            "让用户确认是否是目标文章": {}
+        }
+    },
+    "task_graph": {
+        "nodes": [
+          ...
+
+--- Spark API (DeepSeek R1) (English) ---
+Total time taken: 402.39 seconds
+Tokens per second: 1.37
+Number of tokens: 551
+Generated code: 
+
+Here's a solution to help retrieve and verify WeChat article links:
+
+```python
+import requests
+from urllib.parse import urlparse
+
+def validate_wechat_url(url):
+    headers = {
+        'User-Agent': ...
+Final output: 
+
+```JSON_RESULT
+{
+    "intent_tree": {
+        "Retrieve and validate a WeChat article URL to ensure accessibility": {
+            "Retrieve WeChat article URL from user": {},
+            "Validate U...
+
+--- Spark API (DeepSeek R1) (Chinese) ---
+Total time taken: 170.88 seconds
+Tokens per second: 1.95
+Number of tokens: 334
+Generated code: 
+
+我为您编写了一个Python脚本来实现这个需求。代码会获取微信文章的标题和作者信息并让您手动确认是否匹配，以下是代码：
+
+```python
+import requests
+from bs4 import BeautifulSoup
+import re
+
+def check_wechat_article(url):
+    try:
+        # 设置headers模拟浏览器访问
+   ...
+Final output: 
+
+```JSON_RESULT
+{
+    "intent_tree": {
+        "获取并验证微信文章的正确性": {
+            "验证微信文章链接格式": {},
+            "提取文章元数据及摘要": {},
+            "用户手动确认匹配结果": {}
+        }
+    },
+    "task_graph": {
+       ...
+
+================================================================================
+Average Performance Summary - English
+================================================================================
+English Average Results:
+| Model | Time (s) | Tokens/s | Token Count |
+| --- | --- | --- | --- |
+| DeepSeek_R1_Distill_Llama_8B | 681.78 | 6.42 | 604 |
+| DeepSeek_R1_Distill_Qwen_1.5B | 19.09 | 24.27 | 484 |
+| DeepSeek_R1_Distill_Qwen_7B | 50.86 | 13.18 | 662 |
+| Qwen API | 66.43 | 13.56 | 898 |
+| Spark API (DeepSeek R1) | 389.28 | 1.50 | 584 |
+
+================================================================================
+Average Performance Summary - Chinese
+================================================================================
+Chinese Average Results:
+| Model | Time (s) | Tokens/s | Token Count |
+| --- | --- | --- | --- |
+| DeepSeek_R1_Distill_Llama_8B | 4557.69 | 0.19 | 995 |
+| DeepSeek_R1_Distill_Qwen_1.5B | 25.14 | 6.12 | 160 |
+| DeepSeek_R1_Distill_Qwen_7B | 51.91 | 3.74 | 191 |
+| Qwen API | 57.00 | 4.98 | 284 |
+| Spark API (DeepSeek R1) | 190.67 | 1.57 | 292 |
+
+Results saved to: /home/wzhangeb/lancet/slm/model_comparison_results.json
+
+
+#### Chinese Version
+```Python
+--- DeepSeek_R1_Distill_Qwen_1.5B Results (Chinese) ---
+Time taken: 36.66 seconds
+Tokens per second: 6.66
+Number of tokens: 244
+```
+```Python
+--- DeepSeek_R1_Distill_Qwen_7B Results (Chinese) ---
+Time taken: 43.59 seconds
+Tokens per second: 4.11
+Number of tokens: 179
+```
+```Python
+--- DeepSeek_R1_Distill_Llama_8B Results (Chinese) ---
+Time taken: 3230.30 seconds
+Tokens per second: 0.08
+Number of tokens: 264
+```
+
+```Python
+--- Qwen API (Chinese) ---
+Total time taken: 111.70 seconds
+Tokens per second: 1.24
+Number of tokens: 139
+```
+```Python
+--- Spark API (DeepSeek R1) (Chinese) ---
+Total time taken: 316.96 seconds
+Tokens per second: 0.29
+Number of tokens: 92
+```

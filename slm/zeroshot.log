@@ -1,0 +1,1213 @@
+ File "/root/miniconda3/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 168, in unpack_url
+    file = get_http_url(
+           ^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 109, in get_http_url
+    from_path, content_type = download(link, temp_dir.path)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pip/_internal/network/download.py", line 147, in __call__
+    for chunk in chunks:
+  File "/root/miniconda3/lib/python3.12/site-packages/pip/_internal/cli/progress_bars.py", line 53, in _rich_progress_bar
+    for chunk in iterable:
+  File "/root/miniconda3/lib/python3.12/site-packages/pip/_internal/network/utils.py", line 63, in response_chunks
+    for chunk in response.raw.stream(
+  File "/root/miniconda3/lib/python3.12/site-packages/pip/_vendor/urllib3/response.py", line 622, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pip/_vendor/urllib3/response.py", line 560, in read
+    with self._error_catcher():
+  File "/root/miniconda3/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/root/miniconda3/lib/python3.12/site-packages/pip/_vendor/urllib3/response.py", line 455, in _error_catcher
+    raise ProtocolError("Connection broken: %r" % e, e)
+pip._vendor.urllib3.exceptions.ProtocolError: ("Connection broken: OSError(28, 'No space left on device')", OSError(28, 'No space left on device'))
+root@autodl-container-0a974485ba-12f12d89:~# free -h
+               total        used        free      shared  buff/cache   available
+Mem:           1.0Ti        27Gi        11Gi       5.9Gi       967Gi       968Gi
+Swap:             0B          0B          0B
+root@autodl-container-0a974485ba-12f12d89:~# la -a
+.  ..  .bashrc  .cache  .conda  .condarc  .ipynb_checkpoints  .ipython  .jupyter  .local  .nv  .profile  .ssh  LLMapi.py  __pycache__  autodl-tmp  dialog_dataset.json  first.py  miniconda3  run.py  sft.py  sft_new.py  time_comp.py
+root@autodl-container-0a974485ba-12f12d89:~# cd .cache/
+root@autodl-container-0a974485ba-12f12d89:~/.cache# ls
+huggingface  pip
+root@autodl-container-0a974485ba-12f12d89:~/.cache# cd huggingface/
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface# ls
+datasets  hub
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface# cd hub/
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface/hub# ls
+datasets--cnn_dailymail  models--deepseek-ai--DeepSeek-R1-Distill-Llama-8B  models--deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B  models--deepseek-ai--DeepSeek-R1-Distill-Qwen-7B  version.txt
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface/hub# rm -r datasets--cnn_dailymail/
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface/hub# cd
+root@autodl-container-0a974485ba-12f12d89:~# pip install openai
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Collecting openai
+  Using cached http://mirrors.aliyun.com/pypi/packages/ba/db/7bab832be24631a793492c1c61ecbf029018b99696f435db3b63d690bf1c/openai-1.65.4-py3-none-any.whl (473 kB)
+Requirement already satisfied: anyio<5,>=3.5.0 in ./miniconda3/lib/python3.12/site-packages (from openai) (4.4.0)
+Requirement already satisfied: distro<2,>=1.7.0 in ./miniconda3/lib/python3.12/site-packages (from openai) (1.9.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in ./miniconda3/lib/python3.12/site-packages (from openai) (0.27.0)
+Collecting jiter<1,>=0.4.0 (from openai)
+  Using cached http://mirrors.aliyun.com/pypi/packages/17/61/beea645c0bf398ced8b199e377b61eb999d8e46e053bb285c91c3d3eaab0/jiter-0.8.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (345 kB)
+Collecting pydantic<3,>=1.9.0 (from openai)
+  Downloading http://mirrors.aliyun.com/pypi/packages/f4/3c/8cc1cc84deffa6e25d2d0c688ebb80635dfdbf1dbea3e30c541c8cf4d860/pydantic-2.10.6-py3-none-any.whl (431 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 431.7/431.7 kB 11.4 MB/s eta 0:00:00
+Requirement already satisfied: sniffio in ./miniconda3/lib/python3.12/site-packages (from openai) (1.3.1)
+Requirement already satisfied: tqdm>4 in ./miniconda3/lib/python3.12/site-packages (from openai) (4.67.1)
+Requirement already satisfied: typing-extensions<5,>=4.11 in ./miniconda3/lib/python3.12/site-packages (from openai) (4.12.1)
+Requirement already satisfied: idna>=2.8 in ./miniconda3/lib/python3.12/site-packages (from anyio<5,>=3.5.0->openai) (3.7)
+Requirement already satisfied: certifi in ./miniconda3/lib/python3.12/site-packages (from httpx<1,>=0.23.0->openai) (2024.2.2)
+Requirement already satisfied: httpcore==1.* in ./miniconda3/lib/python3.12/site-packages (from httpx<1,>=0.23.0->openai) (1.0.5)
+Requirement already satisfied: h11<0.15,>=0.13 in ./miniconda3/lib/python3.12/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->openai) (0.14.0)
+Collecting annotated-types>=0.6.0 (from pydantic<3,>=1.9.0->openai)
+  Downloading http://mirrors.aliyun.com/pypi/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Collecting pydantic-core==2.27.2 (from pydantic<3,>=1.9.0->openai)
+  Downloading http://mirrors.aliyun.com/pypi/packages/8d/f0/49129b27c43396581a635d8710dae54a791b17dfc50c70164866bbf865e3/pydantic_core-2.27.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 12.9 MB/s eta 0:00:00
+Collecting typing-extensions<5,>=4.11 (from openai)
+  Downloading http://mirrors.aliyun.com/pypi/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Installing collected packages: typing-extensions, jiter, annotated-types, pydantic-core, pydantic, openai
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.12.1
+    Uninstalling typing_extensions-4.12.1:
+      Successfully uninstalled typing_extensions-4.12.1
+Successfully installed annotated-types-0.7.0 jiter-0.8.2 openai-1.65.4 pydantic-2.10.6 pydantic-core-2.27.2 typing-extensions-4.12.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+^CTraceback (most recent call last):
+  File "/root/first.py", line 543, in <module>
+    main()
+  File "/root/first.py", line 461, in main
+    api_output, code_response = test_api_qwen_two_step(test_prompt)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/first.py", line 380, in test_api_qwen_two_step
+    code_response = get_llm_response("You are a helpful AI assistant.", gen_prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LLMapi.py", line 49, in get_llm_response
+    for chunk in completion:
+  File "/root/miniconda3/lib/python3.12/site-packages/openai/_streaming.py", line 46, in __iter__
+    for item in self._iterator:
+  File "/root/miniconda3/lib/python3.12/site-packages/openai/_streaming.py", line 58, in __stream__
+    for sse in iterator:
+  File "/root/miniconda3/lib/python3.12/site-packages/openai/_streaming.py", line 50, in _iter_events
+    yield from self._decoder.iter_bytes(self.response.iter_bytes())
+  File "/root/miniconda3/lib/python3.12/site-packages/openai/_streaming.py", line 280, in iter_bytes
+    for chunk in self._iter_chunks(iterator):
+  File "/root/miniconda3/lib/python3.12/site-packages/openai/_streaming.py", line 291, in _iter_chunks
+    for chunk in iterator:
+  File "/root/miniconda3/lib/python3.12/site-packages/httpx/_models.py", line 829, in iter_bytes
+    for raw_bytes in self.iter_raw():
+  File "/root/miniconda3/lib/python3.12/site-packages/httpx/_models.py", line 883, in iter_raw
+    for raw_stream_bytes in self.stream:
+  File "/root/miniconda3/lib/python3.12/site-packages/httpx/_client.py", line 126, in __iter__
+    for chunk in self._stream:
+  File "/root/miniconda3/lib/python3.12/site-packages/httpx/_transports/default.py", line 113, in __iter__
+    for part in self._httpcore_stream:
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 367, in __iter__
+    raise exc from None
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 363, in __iter__
+    for part in self._stream:
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 349, in __iter__
+    raise exc
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 341, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 210, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 224, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 126, in read
+    return self._sock.recv(max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/ssl.py", line 1233, in recv
+    return self.read(buflen)
+           ^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/ssl.py", line 1106, in read
+    return self._sslobj.read(len)
+           ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+root@autodl-container-0a974485ba-12f12d89:~# cd .cache/
+root@autodl-container-0a974485ba-12f12d89:~/.cache# ls
+huggingface  pip
+root@autodl-container-0a974485ba-12f12d89:~/.cache# cd huggingface/
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface# ls
+datasets  hub
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface# cd hub/
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface/hub# ls
+models--deepseek-ai--DeepSeek-R1-Distill-Llama-8B  models--deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B  models--deepseek-ai--DeepSeek-R1-Distill-Qwen-7B  version.txt
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface/hub# cd ..
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface# rm -r hub/
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface# cd ..
+root@autodl-container-0a974485ba-12f12d89:~/.cache# cd
+root@autodl-container-0a974485ba-12f12d89:~# export HF_ENDPOINT=https://hf-mirror.com
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Llama_8B =======
+
+Testing DeepSeek_R1_Distill_Llama_8B...
+config.json: 939B [00:00, 4.43MB/s]                                                                                                                                                                                                                                                                      
+model.safetensors.index.json: 23.9kB [00:00, 101MB/s]                                                                                                                                                                                                                                                    
+model-00001-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4.98G/4.98G [03:11<00:00, 26.1MB/s]
+model-00002-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5.00G/5.00G [02:00<00:00, 41.6MB/s]
+model-00003-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4.92G/4.92G [01:51<00:00, 43.9MB/s]
+model-00004-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.17G/1.17G [00:23<00:00, 50.6MB/s]
+Downloading shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [07:28<00:00, 112.23s/it]
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:06<00:00,  1.73s/it]
+generation_config.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 264/264 [00:00<00:00, 3.24MB/s]
+tokenizer_config.json: 56.6kB [00:00, 24.8MB/s]
+tokenizer.json: 17.2MB [00:00, 76.8MB/s]
+special_tokens_map.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 444/444 [00:00<00:00, 6.19MB/s]
+Generation completed in 19.74 seconds
+No properly formatted JSON result found
+Downloading builder script: 6.27kB [00:00, 29.9MB/s]
+Traceback (most recent call last):
+  File "/root/first.py", line 543, in <module>
+    main()
+  File "/root/first.py", line 510, in main
+    metrics = calculate_metrics(reference_text, model_output)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/first.py", line 422, in calculate_metrics
+    rouge_metric = evaluate.load("rouge")
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/loading.py", line 748, in load
+    evaluation_module = evaluation_module_factory(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/loading.py", line 680, in evaluation_module_factory
+    raise e1 from None
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/loading.py", line 639, in evaluation_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/loading.py", line 489, in get_module
+    local_imports = _download_additional_modules(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/loading.py", line 265, in _download_additional_modules
+    raise ImportError(
+ImportError: To be able to use evaluate-metric/rouge, you need to install the following dependencies['nltk', 'rouge_score'] using 'pip install # Here to have a nice missing dependency error message early on rouge_score' for instance'
+root@autodl-container-0a974485ba-12f12d89:~# pip install 'nltk', 'rouge_score'
+ERROR: Invalid requirement: 'nltk,'
+root@autodl-container-0a974485ba-12f12d89:~# pip install nltk, rouge_score
+ERROR: Invalid requirement: 'nltk,'
+root@autodl-container-0a974485ba-12f12d89:~# pip install nltk
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Collecting nltk
+  Downloading http://mirrors.aliyun.com/pypi/packages/4d/66/7d9e26593edda06e8cb531874633f7c2372279c3b0f46235539fe546df8b/nltk-3.9.1-py3-none-any.whl (1.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 7.8 MB/s eta 0:00:00
+Collecting click (from nltk)
+  Downloading http://mirrors.aliyun.com/pypi/packages/7e/d4/7ebdbd03970677812aac39c869717059dbb71a4cfc033ca6e5221787892c/click-8.1.8-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 kB 18.4 MB/s eta 0:00:00
+Collecting joblib (from nltk)
+  Downloading http://mirrors.aliyun.com/pypi/packages/91/29/df4b9b42f2be0b623cbd5e2140cafcaa2bef0759a00b7b70104dcfe2fb51/joblib-1.4.2-py3-none-any.whl (301 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 301.8/301.8 kB 18.7 MB/s eta 0:00:00
+Requirement already satisfied: regex>=2021.8.3 in ./miniconda3/lib/python3.12/site-packages (from nltk) (2024.11.6)
+Requirement already satisfied: tqdm in ./miniconda3/lib/python3.12/site-packages (from nltk) (4.67.1)
+Installing collected packages: joblib, click, nltk
+Successfully installed click-8.1.8 joblib-1.4.2 nltk-3.9.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+root@autodl-container-0a974485ba-12f12d89:~# pip install rouge_score
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Collecting rouge_score
+  Downloading http://mirrors.aliyun.com/pypi/packages/e2/c5/9136736c37022a6ad27fea38f3111eb8f02fe75d067f9a985cc358653102/rouge_score-0.1.2.tar.gz (17 kB)
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: absl-py in ./miniconda3/lib/python3.12/site-packages (from rouge_score) (2.1.0)
+Requirement already satisfied: nltk in ./miniconda3/lib/python3.12/site-packages (from rouge_score) (3.9.1)
+Requirement already satisfied: numpy in ./miniconda3/lib/python3.12/site-packages (from rouge_score) (1.26.4)
+Requirement already satisfied: six>=1.14.0 in ./miniconda3/lib/python3.12/site-packages (from rouge_score) (1.16.0)
+Requirement already satisfied: click in ./miniconda3/lib/python3.12/site-packages (from nltk->rouge_score) (8.1.8)
+Requirement already satisfied: joblib in ./miniconda3/lib/python3.12/site-packages (from nltk->rouge_score) (1.4.2)
+Requirement already satisfied: regex>=2021.8.3 in ./miniconda3/lib/python3.12/site-packages (from nltk->rouge_score) (2024.11.6)
+Requirement already satisfied: tqdm in ./miniconda3/lib/python3.12/site-packages (from nltk->rouge_score) (4.67.1)
+Building wheels for collected packages: rouge_score
+  Building wheel for rouge_score (setup.py) ... done
+  Created wheel for rouge_score: filename=rouge_score-0.1.2-py3-none-any.whl size=24934 sha256=1021076a86e622f362815ef50eb2a9b4bbd594d8d6627cb7e7da55b4f96f4618
+  Stored in directory: /root/.cache/pip/wheels/b4/5c/8c/1db861e2b281d70ba4f03bbb6d21a7764db32456cc93398bd0
+Successfully built rouge_score
+Installing collected packages: rouge_score
+Successfully installed rouge_score-0.1.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+root@autodl-container-0a974485ba-12f12d89:~# pip install evaluate
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Requirement already satisfied: evaluate in ./miniconda3/lib/python3.12/site-packages (0.4.3)
+Requirement already satisfied: datasets>=2.0.0 in ./miniconda3/lib/python3.12/site-packages (from evaluate) (3.3.2)
+Requirement already satisfied: numpy>=1.17 in ./miniconda3/lib/python3.12/site-packages (from evaluate) (1.26.4)
+Requirement already satisfied: dill in ./miniconda3/lib/python3.12/site-packages (from evaluate) (0.3.8)
+Requirement already satisfied: pandas in ./miniconda3/lib/python3.12/site-packages (from evaluate) (2.2.3)
+Requirement already satisfied: requests>=2.19.0 in ./miniconda3/lib/python3.12/site-packages (from evaluate) (2.32.3)
+Requirement already satisfied: tqdm>=4.62.1 in ./miniconda3/lib/python3.12/site-packages (from evaluate) (4.67.1)
+Requirement already satisfied: xxhash in ./miniconda3/lib/python3.12/site-packages (from evaluate) (3.5.0)
+Requirement already satisfied: multiprocess in ./miniconda3/lib/python3.12/site-packages (from evaluate) (0.70.16)
+Requirement already satisfied: fsspec>=2021.05.0 in ./miniconda3/lib/python3.12/site-packages (from fsspec[http]>=2021.05.0->evaluate) (2024.5.0)
+Requirement already satisfied: huggingface-hub>=0.7.0 in ./miniconda3/lib/python3.12/site-packages (from evaluate) (0.29.1)
+Requirement already satisfied: packaging in ./miniconda3/lib/python3.12/site-packages (from evaluate) (23.2)
+Requirement already satisfied: filelock in ./miniconda3/lib/python3.12/site-packages (from datasets>=2.0.0->evaluate) (3.14.0)
+Requirement already satisfied: pyarrow>=15.0.0 in ./miniconda3/lib/python3.12/site-packages (from datasets>=2.0.0->evaluate) (19.0.1)
+Requirement already satisfied: aiohttp in ./miniconda3/lib/python3.12/site-packages (from datasets>=2.0.0->evaluate) (3.11.13)
+Requirement already satisfied: pyyaml>=5.1 in ./miniconda3/lib/python3.12/site-packages (from datasets>=2.0.0->evaluate) (6.0.1)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in ./miniconda3/lib/python3.12/site-packages (from huggingface-hub>=0.7.0->evaluate) (4.12.2)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./miniconda3/lib/python3.12/site-packages (from requests>=2.19.0->evaluate) (2.0.4)
+Requirement already satisfied: idna<4,>=2.5 in ./miniconda3/lib/python3.12/site-packages (from requests>=2.19.0->evaluate) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./miniconda3/lib/python3.12/site-packages (from requests>=2.19.0->evaluate) (2.1.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./miniconda3/lib/python3.12/site-packages (from requests>=2.19.0->evaluate) (2024.2.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./miniconda3/lib/python3.12/site-packages (from pandas->evaluate) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in ./miniconda3/lib/python3.12/site-packages (from pandas->evaluate) (2025.1)
+Requirement already satisfied: tzdata>=2022.7 in ./miniconda3/lib/python3.12/site-packages (from pandas->evaluate) (2025.1)
+Requirement already satisfied: aiohappyeyeballs>=2.3.0 in ./miniconda3/lib/python3.12/site-packages (from aiohttp->datasets>=2.0.0->evaluate) (2.4.6)
+Requirement already satisfied: aiosignal>=1.1.2 in ./miniconda3/lib/python3.12/site-packages (from aiohttp->datasets>=2.0.0->evaluate) (1.3.2)
+Requirement already satisfied: attrs>=17.3.0 in ./miniconda3/lib/python3.12/site-packages (from aiohttp->datasets>=2.0.0->evaluate) (23.2.0)
+Requirement already satisfied: frozenlist>=1.1.1 in ./miniconda3/lib/python3.12/site-packages (from aiohttp->datasets>=2.0.0->evaluate) (1.5.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./miniconda3/lib/python3.12/site-packages (from aiohttp->datasets>=2.0.0->evaluate) (6.1.0)
+Requirement already satisfied: propcache>=0.2.0 in ./miniconda3/lib/python3.12/site-packages (from aiohttp->datasets>=2.0.0->evaluate) (0.3.0)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in ./miniconda3/lib/python3.12/site-packages (from aiohttp->datasets>=2.0.0->evaluate) (1.18.3)
+Requirement already satisfied: six>=1.5 in ./miniconda3/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas->evaluate) (1.16.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+root@autodl-container-0a974485ba-12f12d89:~# pip install bleu
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Collecting bleu
+  Downloading http://mirrors.aliyun.com/pypi/packages/ae/df/4fd9bfe6dc240a1760f8e95ca41aa31382e328e31de45145f528dab5c7f8/bleu-0.3.tar.gz (5.2 kB)
+  Preparing metadata (setup.py) ... done
+Collecting efficiency (from bleu)
+  Downloading http://mirrors.aliyun.com/pypi/packages/4c/36/274e2337fea7f4290cf5e20171f530ff205f5e0f369702ace3fcba5fc67d/efficiency-2.0-py3-none-any.whl (32 kB)
+Requirement already satisfied: pandas in ./miniconda3/lib/python3.12/site-packages (from efficiency->bleu) (2.2.3)
+Requirement already satisfied: numpy in ./miniconda3/lib/python3.12/site-packages (from efficiency->bleu) (1.26.4)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./miniconda3/lib/python3.12/site-packages (from pandas->efficiency->bleu) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in ./miniconda3/lib/python3.12/site-packages (from pandas->efficiency->bleu) (2025.1)
+Requirement already satisfied: tzdata>=2022.7 in ./miniconda3/lib/python3.12/site-packages (from pandas->efficiency->bleu) (2025.1)
+Requirement already satisfied: six>=1.5 in ./miniconda3/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas->efficiency->bleu) (1.16.0)
+Building wheels for collected packages: bleu
+  Building wheel for bleu (setup.py) ... done
+  Created wheel for bleu: filename=bleu-0.3-py3-none-any.whl size=5781 sha256=3188a38970f25b08f7fcddcbe1f729fb1a2c4d21bdff5c2f8852bb50e44637c3
+  Stored in directory: /root/.cache/pip/wheels/17/1a/d4/48536408b36fe8691c93ff930617b22049fb22784a22f18e51
+Successfully built bleu
+Installing collected packages: efficiency, bleu
+Successfully installed bleu-0.3 efficiency-2.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+root@autodl-container-0a974485ba-12f12d89:~# pip install bleu
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Requirement already satisfied: bleu in ./miniconda3/lib/python3.12/site-packages (0.3)
+Requirement already satisfied: efficiency in ./miniconda3/lib/python3.12/site-packages (from bleu) (2.0)
+Requirement already satisfied: pandas in ./miniconda3/lib/python3.12/site-packages (from efficiency->bleu) (2.2.3)
+Requirement already satisfied: numpy in ./miniconda3/lib/python3.12/site-packages (from efficiency->bleu) (1.26.4)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./miniconda3/lib/python3.12/site-packages (from pandas->efficiency->bleu) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in ./miniconda3/lib/python3.12/site-packages (from pandas->efficiency->bleu) (2025.1)
+Requirement already satisfied: tzdata>=2022.7 in ./miniconda3/lib/python3.12/site-packages (from pandas->efficiency->bleu) (2025.1)
+Requirement already satisfied: six>=1.5 in ./miniconda3/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas->efficiency->bleu) (1.16.0)
+^[[A^[[AWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Llama_8B =======
+
+Testing DeepSeek_R1_Distill_Llama_8B...
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:08<00:00,  2.09s/it]
+Generation completed in 1.10 seconds
+No properly formatted JSON result found
+Downloading builder script: 5.94kB [00:00, 22.6MB/s]
+Downloading extra modules: 4.07kB [00:00, 16.4MB/s]                                                                                                                                                                                                                                                      
+Downloading extra modules: 3.34kB [00:00, 17.6MB/s]                                                                                                                                                                                                                                                      
+Traceback (most recent call last):
+  File "/root/first.py", line 543, in <module>
+    main()
+  File "/root/first.py", line 510, in main
+    metrics = calculate_metrics(reference_text, model_output)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/first.py", line 433, in calculate_metrics
+    bleu_results = bleu_metric.compute(
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/module.py", line 467, in compute
+    output = self._compute(**inputs, **compute_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--bleu/9e0985c1200e367cce45605ce0ecb5ede079894e0f24f54613fca08eeb8aff76/bleu.py", line 122, in _compute
+    score = compute_bleu(
+            ^^^^^^^^^^^^^
+  File "/root/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--bleu/9e0985c1200e367cce45605ce0ecb5ede079894e0f24f54613fca08eeb8aff76/nmt_bleu.py", line 108, in compute_bleu
+    bp = math.exp(1 - 1. / ratio)
+                      ~~~^~~~~~~
+ZeroDivisionError: float division by zero
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Llama_8B =======
+
+Testing DeepSeek_R1_Distill_Llama_8B...
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:07<00:00,  1.84s/it]
+Generation completed in 19.40 seconds
+No properly formatted JSON result found
+Using the latest cached version of the module from /root/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--bleu/9e0985c1200e367cce45605ce0ecb5ede079894e0f24f54613fca08eeb8aff76 (last modified on Sat Mar  8 18:51:59 2025) since it couldn't be found locally at evaluate-metric--bleu, or remotely on the Hugging Face Hub.
+
+Metrics for DeepSeek_R1_Distill_Llama_8B vs API Reference:
+ROUGE-1: 0.8333
+ROUGE-2: 0.7013
+ROUGE-L: 0.7821
+BLEU: 0.6874
+
+======= Testing DeepSeek_R1_Distill_Qwen_1.5B =======
+
+Testing DeepSeek_R1_Distill_Qwen_1.5B...
+config.json: 684B [00:00, 2.28MB/s]                                                                                                                                                                                                                                                                      
+model.safetensors: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.09G/3.09G [01:00<00:00, 51.0MB/s]
+generation_config.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 138/138 [00:00<00:00, 1.87MB/s]
+tokenizer_config.json: 7.23kB [00:00, 45.1MB/s]                                                                                                                                                                                                                                                          
+vocab.json: 2.78MB [00:02, 1.27MB/s]
+merges.txt: 1.67MB [00:02, 747kB/s]
+tokenizer.json: 7.03MB [00:04, 1.55MB/s]
+Generation completed in 75.74 seconds
+No properly formatted JSON result found
+
+Metrics for DeepSeek_R1_Distill_Qwen_1.5B vs API Reference:
+ROUGE-1: 0.0541
+ROUGE-2: 0.0278
+ROUGE-L: 0.0541
+BLEU: 0.0229
+
+======= Testing DeepSeek_R1_Distill_Qwen_7B =======
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+config.json: 686B [00:00, 5.77MB/s]                                                                                                                                                                                                                                                                      
+model.safetensors.index.json: 27.8kB [00:00, 185MB/s]                                                                                                                                                                                                                                                    
+model-00001-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.95G/3.95G [02:14<00:00, 29.3MB/s]
+model-00002-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.86G/3.86G [01:31<00:00, 42.4MB/s]
+Downloading shards:  50%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                        | 2/4 [03:47<03:39, 109.99s/it]/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:653: UserWarning: Not enough free disk space to download the file. The expected file size is: 3864.73 MB. The target location /root/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B/blobs only has 2926.28 MB free disk space.
+  warnings.warn(
+                                                                                                                                                                                                                                                                                                        ^model-00003-of-00004.safetensors:   1%|█▊                                                                                                                                                                                                                          | 31.5M/3.86G [01:57<3:57:59, 268kB/s]
+Downloading shards:  50%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                        | 2/4 [05:45<05:45, 172.64s/it]
+Traceback (most recent call last):
+  File "/root/first.py", line 543, in <module>
+    main()
+  File "/root/first.py", line 499, in main
+    model_output = test_local_model(model_name, model_path, test_prompt['prompt'])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/first.py", line 344, in test_local_model
+    pipe = pipeline("text-generation", model=model_path, device_map=device_map)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/pipelines/__init__.py", line 926, in pipeline
+    framework, model = infer_framework_load_model(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/pipelines/base.py", line 289, in infer_framework_load_model
+    model = model_class.from_pretrained(model, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3974, in from_pretrained
+    resolved_archive_file, sharded_metadata = get_checkpoint_shard_files(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 1098, in get_checkpoint_shard_files
+    cached_filename = cached_file(
+                      ^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1011, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1547, in _download_to_tmp_and_move
+    http_get(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 454, in http_get
+    for chunk in r.iter_content(chunk_size=constants.DOWNLOAD_CHUNK_SIZE):
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 934, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 877, in read
+    data = self._raw_read(amt)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 812, in _raw_read
+    data = self._fp_read(amt) if not fp_closed else b""
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 797, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/http/client.py", line 479, in read
+    s = self.fp.read(amt)
+        ^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/ssl.py", line 1252, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/ssl.py", line 1104, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Qwen_7B =======
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+Downloading shards:   0%|                                                                                                                                                                                                                                                          | 0/4 [00:00<?, ?it/s]/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:653: UserWarning: Not enough free disk space to download the file. The expected file size is: 3864.73 MB. The target location /root/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B/blobs only has 2894.84 MB free disk space.
+  warnings.warn(
+                                                                                                                                                                                                                                                                                                        ^model-00003-of-00004.safetensors:  18%|███████████████████████████████████████▏                                                                                                                                                                                      | 682M/3.86G [01:11<05:50, 9.08MB/s]
+Downloading shards:  50%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                         | 2/4 [01:12<01:12, 36.33s/it]
+Traceback (most recent call last):
+  File "/root/first.py", line 543, in <module>
+    main()
+  File "/root/first.py", line 499, in main
+    model_output = test_local_model(model_name, model_path, test_prompt['prompt'])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/first.py", line 344, in test_local_model
+    pipe = pipeline("text-generation", model=model_path, device_map=device_map)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/pipelines/__init__.py", line 926, in pipeline
+    framework, model = infer_framework_load_model(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/pipelines/base.py", line 289, in infer_framework_load_model
+    model = model_class.from_pretrained(model, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3974, in from_pretrained
+    resolved_archive_file, sharded_metadata = get_checkpoint_shard_files(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 1098, in get_checkpoint_shard_files
+    cached_filename = cached_file(
+                      ^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1011, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1547, in _download_to_tmp_and_move
+    http_get(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 454, in http_get
+    for chunk in r.iter_content(chunk_size=constants.DOWNLOAD_CHUNK_SIZE):
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 934, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 877, in read
+    data = self._raw_read(amt)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 812, in _raw_read
+    data = self._fp_read(amt) if not fp_closed else b""
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 797, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/http/client.py", line 479, in read
+    s = self.fp.read(amt)
+        ^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/ssl.py", line 1252, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/ssl.py", line 1104, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+root@autodl-container-0a974485ba-12f12d89:~# export HF_ENDPOINT=https://hf-mirror.com
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Qwen_7B =======
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+Downloading shards:   0%|                                                                                                                                                                                                                                                          | 0/4 [00:00<?, ?it/s]/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:653: UserWarning: Not enough free disk space to download the file. The expected file size is: 3864.73 MB. The target location /root/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B/blobs only has 2244.72 MB free disk space.
+  warnings.warn(
+model-00003-of-00004.safetensors:  76%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                     | 2.94G/3.86G [01:02<00:25, 36.1MB/s]
+Downloading shards:  50%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                         | 2/4 [01:03<01:03, 31.71s/it]
+Downloading shards:   0%|                                                                                                                                                                                                                                                          | 0/4 [00:00<?, ?it/s]/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:653: UserWarning: Not enough free disk space to download the file. The expected file size is: 3864.73 MB. The target location /root/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B/blobs only has 0.77 MB free disk space.
+  warnings.warn(
+model-00003-of-00004.safetensors:  76%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                     | 2.94G/3.86G [00:18<27:15, 568kB/s]
+Downloading shards:  50%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                         | 2/4 [00:19<00:19,  9.71s/it]
+Error testing DeepSeek_R1_Distill_Qwen_7B: Could not load model Qwen/Qwen2.5-7B with any of the following classes: (<class 'transformers.models.auto.modeling_auto.AutoModelForCausalLM'>, <class 'transformers.models.qwen2.modeling_qwen2.Qwen2ForCausalLM'>). See the original errors:
+
+while loading with AutoModelForCausalLM, an error is thrown:
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/pipelines/base.py", line 289, in infer_framework_load_model
+    model = model_class.from_pretrained(model, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3974, in from_pretrained
+    resolved_archive_file, sharded_metadata = get_checkpoint_shard_files(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 1098, in get_checkpoint_shard_files
+    cached_filename = cached_file(
+                      ^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1011, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1547, in _download_to_tmp_and_move
+    http_get(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 457, in http_get
+    temp_file.write(chunk)
+OSError: [Errno 28] No space left on device
+
+while loading with Qwen2ForCausalLM, an error is thrown:
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/pipelines/base.py", line 289, in infer_framework_load_model
+    model = model_class.from_pretrained(model, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3974, in from_pretrained
+    resolved_archive_file, sharded_metadata = get_checkpoint_shard_files(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 1098, in get_checkpoint_shard_files
+    cached_filename = cached_file(
+                      ^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1011, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1547, in _download_to_tmp_and_move
+    http_get(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 457, in http_get
+    temp_file.write(chunk)
+OSError: [Errno 28] No space left on device
+
+
+
+No properly formatted JSON result found
+
+Metrics for DeepSeek_R1_Distill_Qwen_7B vs API Reference:
+ROUGE-1: 0.0000
+ROUGE-2: 0.0000
+ROUGE-L: 0.0000
+BLEU: 0.0000
+Traceback (most recent call last):
+  File "/root/first.py", line 543, in <module>
+    main()
+  File "/root/first.py", line 528, in main
+    with open(output_path, "w", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/wzhangeb/lancet/slm/model_evaluation_results.json'
+root@autodl-container-0a974485ba-12f12d89:~# export HF_ENDPOINT=https://hf-mirror.com
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Qwen_7B =======
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+Downloading shards:   0%|                                                                                                                                                                                                                                                          | 0/4 [00:00<?, ?it/s]/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:653: UserWarning: Not enough free disk space to download the file. The expected file size is: 3864.73 MB. The target location /root/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B/blobs only has 0.77 MB free disk space.
+  warnings.warn(
+                                                                                                                                                                                                                                                                                                        ^model-00003-of-00004.safetensors:  76%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                       | 2.93G/3.86G [02:34<?, ?B/s]
+Downloading shards:  50%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                         | 2/4 [02:37<02:37, 78.57s/it]
+Traceback (most recent call last):
+  File "/root/first.py", line 543, in <module>
+    main()
+  File "/root/first.py", line 499, in main
+    model_output = test_local_model(model_name, model_path, test_prompt['prompt'])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/first.py", line 344, in test_local_model
+    pipe = pipeline("text-generation", model=model_path, device_map=device_map)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/pipelines/__init__.py", line 926, in pipeline
+    framework, model = infer_framework_load_model(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/pipelines/base.py", line 289, in infer_framework_load_model
+    model = model_class.from_pretrained(model, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3974, in from_pretrained
+    resolved_archive_file, sharded_metadata = get_checkpoint_shard_files(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 1098, in get_checkpoint_shard_files
+    cached_filename = cached_file(
+                      ^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1011, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1547, in _download_to_tmp_and_move
+    http_get(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 454, in http_get
+    for chunk in r.iter_content(chunk_size=constants.DOWNLOAD_CHUNK_SIZE):
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 934, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 877, in read
+    data = self._raw_read(amt)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 812, in _raw_read
+    data = self._fp_read(amt) if not fp_closed else b""
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/response.py", line 797, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/http/client.py", line 479, in read
+    s = self.fp.read(amt)
+        ^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/ssl.py", line 1252, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/ssl.py", line 1104, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+root@autodl-container-0a974485ba-12f12d89:~# export HF_ENDPOINT=https://hf-mirror.com
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Qwen_7B =======
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+Downloading shards:   0%|                                                                                                                                                                                                                                                          | 0/4 [00:00<?, ?it/s]/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:653: UserWarning: Not enough free disk space to download the file. The expected file size is: 3864.73 MB. The target location /root/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B/blobs only has 0.77 MB free disk space.
+  warnings.warn(
+model-00003-of-00004.safetensors:  76%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                     | 2.94G/3.86G [00:03<04:48, 3.22MB/s]
+Downloading shards:  50%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                         | 2/4 [00:04<00:04,  2.25s/it]
+model-00003-of-00004.safetensors:  76%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                     | 2.94G/3.86G [00:13<20:29, 755kB/s]
+Downloading shards:  50%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                         | 2/4 [00:14<00:14,  7.47s/it]
+Error testing DeepSeek_R1_Distill_Qwen_7B: Could not load model Qwen/Qwen2.5-7B with any of the following classes: (<class 'transformers.models.auto.modeling_auto.AutoModelForCausalLM'>, <class 'transformers.models.qwen2.modeling_qwen2.Qwen2ForCausalLM'>). See the original errors:
+
+while loading with AutoModelForCausalLM, an error is thrown:
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/pipelines/base.py", line 289, in infer_framework_load_model
+    model = model_class.from_pretrained(model, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3974, in from_pretrained
+    resolved_archive_file, sharded_metadata = get_checkpoint_shard_files(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 1098, in get_checkpoint_shard_files
+    cached_filename = cached_file(
+                      ^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1011, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1547, in _download_to_tmp_and_move
+    http_get(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 457, in http_get
+    temp_file.write(chunk)
+OSError: [Errno 28] No space left on device
+
+while loading with Qwen2ForCausalLM, an error is thrown:
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/pipelines/base.py", line 289, in infer_framework_load_model
+    model = model_class.from_pretrained(model, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3974, in from_pretrained
+    resolved_archive_file, sharded_metadata = get_checkpoint_shard_files(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 1098, in get_checkpoint_shard_files
+    cached_filename = cached_file(
+                      ^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/transformers/utils/hub.py", line 403, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1011, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1547, in _download_to_tmp_and_move
+    http_get(
+  File "/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 457, in http_get
+    temp_file.write(chunk)
+OSError: [Errno 28] No space left on device
+
+
+
+No properly formatted JSON result found
+^CTraceback (most recent call last):
+  File "/root/first.py", line 543, in <module>
+    main()
+  File "/root/first.py", line 510, in main
+    metrics = calculate_metrics(reference_text, model_output)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/first.py", line 423, in calculate_metrics
+    bleu_metric = evaluate.load("bleu")
+                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/loading.py", line 748, in load
+    evaluation_module = evaluation_module_factory(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/loading.py", line 639, in evaluation_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/loading.py", line 489, in get_module
+    local_imports = _download_additional_modules(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/loading.py", line 248, in _download_additional_modules
+    local_import_path = cached_path(
+                        ^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/utils/file_utils.py", line 175, in cached_path
+    output_path = get_from_cache(
+                  ^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/utils/file_utils.py", line 457, in get_from_cache
+    response = http_head(
+               ^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/utils/file_utils.py", line 378, in http_head
+    response = _request_with_retry(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/evaluate/utils/file_utils.py", line 307, in _request_with_retry
+    response = requests.request(method=method.upper(), url=url, timeout=timeout, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/sessions.py", line 724, in send
+    history = [resp for resp in gen]
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/sessions.py", line 265, in resolve_redirects
+    resp = self.send(
+           ^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/urllib3/connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/root/miniconda3/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/ssl.py", line 1252, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/ssl.py", line 1104, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+root@autodl-container-0a974485ba-12f12d89:~# cd 
+root@autodl-container-0a974485ba-12f12d89:~# cd .cache/
+root@autodl-container-0a974485ba-12f12d89:~/.cache# ls
+huggingface  pip
+root@autodl-container-0a974485ba-12f12d89:~/.cache# cd huggingface/
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface# ls
+datasets  evaluate  hub  metrics  modules
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface# cd hub/
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface/hub# ls
+models--NousResearch--DeepHermes-3-Llama-3-8B-Preview  models--Qwen--Qwen2.5-1.5B  models--Qwen--Qwen2.5-7B  version.txt
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface/hub# rm -r models--NousResearch--DeepHermes-3-Llama-3-8B-Preview/
+root@autodl-container-0a974485ba-12f12d89:~/.cache/huggingface/hub# cd
+root@autodl-container-0a974485ba-12f12d89:~# ls
+LLMapi.py  __pycache__  autodl-tmp  dialog_dataset.json  first.py  miniconda3  run.py  sft.py  sft_new.py  time_comp.py
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+^CTraceback (most recent call last):
+  File "/root/first.py", line 543, in <module>
+    main()
+  File "/root/first.py", line 461, in main
+    api_output, code_response = test_api_qwen_two_step(test_prompt)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/first.py", line 380, in test_api_qwen_two_step
+    code_response = get_llm_response("You are a helpful AI assistant.", gen_prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LLMapi.py", line 39, in get_llm_response
+    completion = client.chat.completions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 879, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/openai/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/openai/_base_client.py", line 919, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/openai/_base_client.py", line 955, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/httpx/_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/httpx/_transports/default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 99, in handle_request
+    raise exc
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 76, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 122, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 206, in connect_tcp
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/socket.py", line 828, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Qwen_7B =======
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+Downloading shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [02:14<00:00, 33.70s/it]
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:10<00:00,  2.52s/it]
+merges.txt: 1.67MB [00:00, 2.56MB/s]
+tokenizer.json: 7.03MB [00:04, 1.56MB/s]
+Generation completed in 128.85 seconds
+No properly formatted JSON result found
+Using the latest cached version of the module from /root/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--bleu/9e0985c1200e367cce45605ce0ecb5ede079894e0f24f54613fca08eeb8aff76 (last modified on Sat Mar  8 18:51:59 2025) since it couldn't be found locally at evaluate-metric--bleu, or remotely on the Hugging Face Hub.
+
+Metrics for DeepSeek_R1_Distill_Qwen_7B vs API Reference:
+ROUGE-1: 0.2610
+ROUGE-2: 0.2004
+ROUGE-L: 0.2534
+BLEU: 0.1848
+
+Results saved to model_evaluation_results.json
+
+======= Summary of Results =======
+| Model | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU |
+| ----- | ------- | ------- | ------- | ---- |
+| API_Reference | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| DeepSeek_R1_Distill_Qwen_7B | 0.2610 | 0.2004 | 0.2534 | 0.1848 |
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Qwen_1.5B =======
+
+Testing DeepSeek_R1_Distill_Qwen_1.5B...
+Generation completed in 7.81 seconds
+No properly formatted JSON result found
+
+Metrics for DeepSeek_R1_Distill_Qwen_1.5B vs API Reference:
+ROUGE-1: 0.7123
+ROUGE-2: 0.5556
+ROUGE-L: 0.7123
+BLEU: 0.6678
+
+Results saved to model_evaluation_results.json
+
+======= Summary of Results =======
+| Model | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU |
+| ----- | ------- | ------- | ------- | ---- |
+| API_Reference | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| DeepSeek_R1_Distill_Qwen_1.5B | 0.7123 | 0.5556 | 0.7123 | 0.6678 |
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Qwen_7B =======
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:07<00:00,  1.95s/it]
+Generation completed in 20.55 seconds
+No properly formatted JSON result found
+
+Metrics for DeepSeek_R1_Distill_Qwen_7B vs API Reference:
+ROUGE-1: 0.7500
+ROUGE-2: 0.6349
+ROUGE-L: 0.7500
+BLEU: 0.6070
+
+Results saved to model_evaluation_results.json
+
+======= Summary of Results =======
+| Model | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU |
+| ----- | ------- | ------- | ------- | ---- |
+| API_Reference | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| DeepSeek_R1_Distill_Qwen_7B | 0.7500 | 0.6349 | 0.7500 | 0.6070 |
+root@autodl-container-0a974485ba-12f12d89:~# 
+
+
++--------------------------------------------------AutoDL--------------------------------------------------------+
+目录说明:
+╔═════════════════╦════════╦════╦═════════════════════════════════════════════════════════════════════════╗
+║目录             ║名称    ║速度║说明                                                                     ║
+╠═════════════════╬════════╬════╬═════════════════════════════════════════════════════════════════════════╣
+║/                ║系 统 盘║一般║实例关机数据不会丢失，可存放代码等。会随保存镜像一起保存。               ║
+║/root/autodl-tmp ║数 据 盘║ 快 ║实例关机数据不会丢失，可存放读写IO要求高的数据。但不会随保存镜像一起保存 ║
+╚═════════════════╩════════╩════╩═════════════════════════════════════════════════════════════════════════╝
+CPU ：14 核心
+内存：100 GB
+GPU ：NVIDIA A800 80GB PCIe, 1
+存储：
+  系 统 盘/               ：100% 30G/30G
+  数 据 盘/root/autodl-tmp：50% 25G/50G
++----------------------------------------------------------------------------------------------------------------+
+*注意: 
+1.系统盘较小请将大的数据存放于数据盘或文件存储中，重置系统时数据盘和文件存储中的数据不受影响
+2.清理系统盘请参考：https://www.autodl.com/docs/qa1/
+3.终端中长期执行命令请使用screen等工具开后台运行，确保程序不受SSH连接中断影响：https://www.autodl.com/docs/daemon/
+root@autodl-container-0a974485ba-12f12d89:~# export HF_ENDPOINT=https://hf-mirror.com
+root@autodl-container-0a974485ba-12f12d89:~# 
+root@autodl-container-0a974485ba-12f12d89:~# export HF_ENDPOINT=https://hf-mirror.com
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Qwen_1.5B =======
+
+Testing DeepSeek_R1_Distill_Qwen_1.5B...
+Generation completed in 7.83 seconds
+No properly formatted JSON result found
+
+Metrics for DeepSeek_R1_Distill_Qwen_1.5B vs API Reference:
+ROUGE-1: 0.8682
+ROUGE-2: 0.6929
+ROUGE-L: 0.8372
+BLEU: 0.7703
+
+======= Testing DeepSeek_R1_Distill_Qwen_7B =======
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+Downloading shards:   0%|                                                                                                                                                                                                                                                          | 0/4 [00:00<?, ?it/s]/root/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:653: UserWarning: Not enough free disk space to download the file. The expected file size is: 3864.73 MB. The target location /root/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B/blobs only has 0.76 MB free disk space.
+  warnings.warn(
+model-00003-of-00004.safetensors:  76%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                     | 2.94G/3.86G [00:01<01:50, 8.38MB/s]
+Downloading shards:  50%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                         | 2/4 [00:01<00:01,  1.06it/s]
+model-00003-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.86G/3.86G [01:11<00:00, 13.2MB/s]
+model-00004-of-00004.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.56G/3.56G [02:30<00:00, 23.7MB/s]
+Downloading shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [03:45<00:00, 56.41s/it]
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:09<00:00,  2.34s/it]
+generation_config.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 138/138 [00:00<00:00, 1.66MB/s]
+tokenizer_config.json: 7.23kB [00:00, 39.4MB/s]                                                                                                                                                                                                                                                          
+vocab.json: 2.78MB [00:00, 5.86MB/s]
+Generation completed in 14.04 seconds
+No properly formatted JSON result found
+
+Metrics for DeepSeek_R1_Distill_Qwen_7B vs API Reference:
+ROUGE-1: 0.6800
+ROUGE-2: 0.5714
+ROUGE-L: 0.6800
+BLEU: 0.4178
+
+Results saved to model_evaluation_results.json
+
+======= Summary of Results =======
+| Model | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU |
+| ----- | ------- | ------- | ------- | ---- |
+| API_Reference | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| DeepSeek_R1_Distill_Qwen_1.5B | 0.8682 | 0.6929 | 0.8372 | 0.7703 |
+| DeepSeek_R1_Distill_Qwen_7B | 0.6800 | 0.5714 | 0.6800 | 0.4178 |
+root@autodl-container-0a974485ba-12f12d89:~# export HF_ENDPOINT=https://hf-mirror.com
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Qwen_1.5B =======
+
+Testing DeepSeek_R1_Distill_Qwen_1.5B...
+Generation completed in 7.14 seconds
+No properly formatted JSON result found
+
+Metrics for DeepSeek_R1_Distill_Qwen_1.5B vs API Reference:
+ROUGE-1: 0.7317
+ROUGE-2: 0.5950
+ROUGE-L: 0.6992
+BLEU: 0.5378
+
+Results saved to model_evaluation_results.json
+
+======= Summary of Results =======
+| Model | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU |
+| ----- | ------- | ------- | ------- | ---- |
+| API_Reference | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| DeepSeek_R1_Distill_Qwen_1.5B | 0.7317 | 0.5950 | 0.6992 | 0.5378 |
+root@autodl-container-0a974485ba-12f12d89:~# python first.py 
+Testing with Chinese prompt: 嗯，我想先搞清楚怎么找到微信文章的链接，你能帮我吗？我试了几次都没成功 😫 顺便看看这个链接能不能打开，我怕它有问题。快点告诉我怎么做吧！
+
+======= Testing API (Reference) =======
+
+Testing Qwen API (two-step process)...
+API processing completed
+
+API reference response extracted successfully
+
+======= Testing DeepSeek_R1_Distill_Qwen_7B =======
+
+Testing DeepSeek_R1_Distill_Qwen_7B...
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:08<00:00,  2.22s/it]
+Generation completed in 21.07 seconds
+No properly formatted JSON result found
+
+Metrics for DeepSeek_R1_Distill_Qwen_7B vs API Reference:
+ROUGE-1: 0.7681
+ROUGE-2: 0.6471
+ROUGE-L: 0.7681
+BLEU: 0.6517
+
+Results saved to model_evaluation_results.json
+
+======= Summary of Results =======
+| Model | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU |
+| ----- | ------- | ------- | ------- | ---- |
+| API_Reference | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+| DeepSeek_R1_Distill_Qwen_7B | 0.7681 | 0.6471 | 0.7681 | 0.6517 |
+root@autodl-container-0a974485ba-12f12d89:~# 

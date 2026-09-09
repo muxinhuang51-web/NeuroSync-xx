@@ -1,0 +1,146 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#"/>
+    <meta name="viewport" content="width=1.0, initial-scale=1.0">
+    <title>AI Graph Chat</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add the Marked library for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Add Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script>
+        window.Prism = window.Prism || {};
+        window.Prism.manual = true;
+    </script>
+   
+    <!-- Add this inside the <head> section -->
+    <style>
+        /* Enhanced code block styling */
+      
+        .markdown-content code {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Language-specific styling */
+        .markdown-content pre[data-language="python"] {
+            border-left-color: #3572A5;
+        }
+
+        .markdown-content pre[data-language="javascript"] {
+            border-left-color: #f7df1e;
+        }
+
+        .markdown-content pre[data-language="bash"] {
+            border-left-color: #89e051;
+        }
+
+        /* Basic text formatting */
+        .markdown-content p {
+            margin: 12px 0;
+            line-height: 1.6;
+        }
+
+        .markdown-content h1, 
+        .markdown-content h2, 
+        .markdown-content h3 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.8em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.25em;
+        }
+
+        .markdown-content ul, 
+        .markdown-content ol {
+            padding-left: 2em;
+            margin: 16px 0;
+        }
+
+        .markdown-content li {
+            margin: 8px 0;
+        }
+
+        .markdown-content blockquote {
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5;
+            margin: 16px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧聊天区域 -->
+        <div class="chat-container">
+            <div id="chatArea" class="chat-area">
+                <!-- 聊天消息将在这里显示 -->
+            </div>
+            <div class="input-area">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button id="submitMessage">Submit</button>
+            </div>
+        </div>
+
+        <!-- 右侧图形区域 -->
+        <div class="graph-container">
+            <div class="graph-area" id="oldGraphArea">
+                <!-- 上方旧图区域 -->
+                <div class="modify-area">
+                    <input type="text" id="modifyInput" placeholder="Enter modification text...">
+                    <button id="modifyButton">Modify</button>
+                </div>
+                <svg id="oldGraph"></svg>
+            </div>
+            <div class="graph-area" id="currentGraphArea">
+                <!-- 下方新图区域 -->
+                <svg id="currentGraph"></svg>
+                <div id="intentTreeContainer" class="intent-tree-container">
+                    <div class="intent-tree-header"></div>
+                    <div id="intentTreeContent" class="intent-tree-content"></div>
+                </div>
+                <div class="button-container">
+                    <div class="version-control">
+                        <button id="saveVersion" class="save-button">Save Version</button>
+                        <select id="versionSelect" class="version-select">
+                            <option value="">Select Version</option>
+                        </select>
+                    </div>
+                    <button id="confirmGraph" class="confirm-button">Confirm Graph</button>
+                    <button id="downloadHistory" class="download-button">Download History</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="context-menu" style="display: none;"></div>
+    <!-- Load class definitions first -->
+    <!-- Load dependencies first -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="graphUtils.js"></script>
+    <script src="chatUtils.js"></script>
+    <!-- Load main.js last -->
+    <script src="main.js"></script>
+   
+</body>
+</html>

@@ -1,0 +1,7 @@
+Running SFT experiments
+Group 1: Running both 8B and 7B models in parallel
+Group 1 completed
+Waiting for 2 minute to allow GPU memory to clear...
+Single 2: Running single 1.5B models
+Group 2 completed
+All SFT training completed successfully.

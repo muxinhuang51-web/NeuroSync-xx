@@ -1,0 +1,1210 @@
+Processing interactions for user 1...
+Processing first round...
+First round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "爬取文本内容并保存": {},
+            "爬取图像内容并保存": {}
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "提取文本内容并保存到文件中"},
+            {"id": "Node4", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node5", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node6", "description": "创建保存内容的本地文件夹（如果不存在）"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractText"},
+            {"source": "Node2", "target": "Node4", "type": "findImages"},
+            {"source": "Node4", "target": "Node5", "type": "downloadImages"},
+            {"source": "Node6", "target": "Node3", "type": "saveToFolder"},
+            {"source": "Node6", "target": "Node5", "type": "saveToFolder"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6"]
+        },
+        "爬取文本内容并保存": {
+            "nodes": ["Node1", "Node2", "Node3", "Node6"]
+        },
+        "爬取图像内容并保存": {
+            "nodes": ["Node1", "Node2", "Node4", "Node5", "Node6"]
+        }
+    }
+}
+```
+First round processed and results saved.
+Processing round 1...
+Current round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "爬取文本内容并保存": {
+                "提取微信公众号文章的文本内容": {},
+                "保存文本内容到文件": {}
+            },
+            "爬取图像内容并保存": {
+                "提取微信公众号文章中的图像URL": {},
+                "下载图像并保存到本地": {}
+            },
+            "创建保存内容的本地文件夹": {}
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "从解析后的HTML中提取微信公众号文章的文本内容"},
+            {"id": "Node4", "description": "将提取的文本内容保存到文件中"},
+            {"id": "Node5", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node6", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node7", "description": "创建保存内容的本地文件夹（如果不存在）"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractText"},
+            {"source": "Node3", "target": "Node4", "type": "saveTextToFile"},
+            {"source": "Node2", "target": "Node5", "type": "findImages"},
+            {"source": "Node5", "target": "Node6", "type": "downloadImages"},
+            {"source": "Node7", "target": "Node4", "type": "saveToFolder"},
+            {"source": "Node7", "target": "Node6", "type": "saveToFolder"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7"]
+        },
+        "爬取文本内容并保存": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node7"]
+        },
+        "提取微信公众号文章的文本内容": {
+            "nodes": ["Node1", "Node2", "Node3"]
+        },
+        "保存文本内容到文件": {
+            "nodes": ["Node3", "Node4", "Node7"]
+        },
+        "爬取图像内容并保存": {
+            "nodes": ["Node1", "Node2", "Node5", "Node6", "Node7"]
+        },
+        "提取微信公众号文章中的图像URL": {
+            "nodes": ["Node1", "Node2", "Node5"]
+        },
+        "下载图像并保存到本地": {
+            "nodes": ["Node5", "Node6", "Node7"]
+        },
+        "创建保存内容的本地文件夹": {
+            "nodes": ["Node7"]
+        }
+    }
+}
+```
+Round 1 processed and results saved.
+Processing round 2...
+Current round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "爬取文本内容并保存": {
+                "提取微信公众号文章的文本内容": {},
+                "保存文本内容到文件": {}
+            },
+            "爬取图像内容并保存": {
+                "提取微信公众号文章中的图像URL": {},
+                "下载图像并保存到本地": {}
+            },
+            "创建保存内容的本地文件夹": {},
+            "分两部分保存内容": {
+                "保存纯文本内容": {},
+                "保存完整内容（包括文本和图片）": {}
+            }
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "从解析后的HTML中提取微信公众号文章的文本内容"},
+            {"id": "Node4", "description": "将提取的文本内容保存到文件中"},
+            {"id": "Node5", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node6", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node7", "description": "创建保存内容的本地文件夹（如果不存在）"},
+            {"id": "Node8", "description": "保存仅包含文本内容的文件"},
+            {"id": "Node9", "description": "保存包含文本和图片的完整HTML文件"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractText"},
+            {"source": "Node3", "target": "Node4", "type": "saveTextToFile"},
+            {"source": "Node2", "target": "Node5", "type": "findImages"},
+            {"source": "Node5", "target": "Node6", "type": "downloadImages"},
+            {"source": "Node7", "target": "Node4", "type": "saveToFolder"},
+            {"source": "Node7", "target": "Node6", "type": "saveToFolder"},
+            {"source": "Node3", "target": "Node8", "type": "saveTextOnly"},
+            {"source": "Node3", "target": "Node9", "type": "saveFullContent"},
+            {"source": "Node5", "target": "Node9", "type": "includeImagesInHTML"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9"]
+        },
+        "爬取文本内容并保存": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node7", "Node8", "Node9"]
+        },
+        "提取微信公众号文章的文本内容": {
+            "nodes": ["Node1", "Node2", "Node3"]
+        },
+        "保存文本内容到文件": {
+            "nodes": ["Node3", "Node4", "Node7"]
+        },
+        "爬取图像内容并保存": {
+            "nodes": ["Node1", "Node2", "Node5", "Node6", "Node7", "Node9"]
+        },
+        "提取微信公众号文章中的图像URL": {
+            "nodes": ["Node1", "Node2", "Node5"]
+        },
+        "下载图像并保存到本地": {
+            "nodes": ["Node5", "Node6", "Node7"]
+        },
+        "创建保存内容的本地文件夹": {
+            "nodes": ["Node7"]
+        },
+        "分两部分保存内容": {
+            "nodes": ["Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9"]
+        },
+        "保存纯文本内容": {
+            "nodes": ["Node3", "Node8"]
+        },
+        "保存完整内容（包括文本和图片）": {
+            "nodes": ["Node3", "Node5", "Node6", "Node7", "Node9"]
+        }
+    }
+}
+```
+Round 2 processed and results saved.
+Processing round 3...
+Current round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "爬取文本内容并保存": {
+                "提取微信公众号文章的文本内容": {},
+                "保存文本内容到文件": {}
+            },
+            "爬取图像内容并保存": {
+                "提取微信公众号文章中的图像URL": {},
+                "下载图像并保存到本地": {}
+            },
+            "创建保存内容的本地文件夹": {},
+            "分两部分保存内容": {
+                "保存纯文本内容": {},
+                "保存完整内容（包括文本和图片）": {
+                    "将图片替换为文件名并嵌入文本": {},
+                    "分别保存文本和图片到本地": {}
+                }
+            }
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "从解析后的HTML中提取微信公众号文章的文本内容"},
+            {"id": "Node4", "description": "将提取的文本内容保存到文件中"},
+            {"id": "Node5", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node6", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node7", "description": "创建保存内容的本地文件夹（如果不存在）"},
+            {"id": "Node8", "description": "保存仅包含文本内容的文件"},
+            {"id": "Node9", "description": "保存包含文本和图片的完整HTML文件"},
+            {"id": "Node10", "description": "将图片标签替换为图片文件名并嵌入文本"},
+            {"id": "Node11", "description": "分别保存文本和图片到本地"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractText"},
+            {"source": "Node3", "target": "Node4", "type": "saveTextToFile"},
+            {"source": "Node2", "target": "Node5", "type": "findImages"},
+            {"source": "Node5", "target": "Node6", "type": "downloadImages"},
+            {"source": "Node7", "target": "Node4", "type": "saveToFolder"},
+            {"source": "Node7", "target": "Node6", "type": "saveToFolder"},
+            {"source": "Node3", "target": "Node8", "type": "saveTextOnly"},
+            {"source": "Node3", "target": "Node9", "type": "saveFullContent"},
+            {"source": "Node5", "target": "Node9", "type": "includeImagesInHTML"},
+            {"source": "Node3", "target": "Node10", "type": "replaceImageTagsWithFilenames"},
+            {"source": "Node5", "target": "Node10", "type": "mapImageURLsToFilenames"},
+            {"source": "Node10", "target": "Node11", "type": "saveSeparateTextAndImages"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node11"]
+        },
+        "爬取文本内容并保存": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node7", "Node8", "Node10", "Node11"]
+        },
+        "提取微信公众号文章的文本内容": {
+            "nodes": ["Node1", "Node2", "Node3"]
+        },
+        "保存文本内容到文件": {
+            "nodes": ["Node3", "Node4", "Node7"]
+        },
+        "爬取图像内容并保存": {
+            "nodes": ["Node1", "Node2", "Node5", "Node6", "Node7", "Node10", "Node11"]
+        },
+        "提取微信公众号文章中的图像URL": {
+            "nodes": ["Node1", "Node2", "Node5"]
+        },
+        "下载图像并保存到本地": {
+            "nodes": ["Node5", "Node6", "Node7"]
+        },
+        "创建保存内容的本地文件夹": {
+            "nodes": ["Node7"]
+        },
+        "分两部分保存内容": {
+            "nodes": ["Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node11"]
+        },
+        "保存纯文本内容": {
+            "nodes": ["Node3", "Node8"]
+        },
+        "保存完整内容（包括文本和图片）": {
+            "nodes": ["Node3", "Node5", "Node6", "Node7", "Node9", "Node10", "Node11"]
+        },
+        "将图片替换为文件名并嵌入文本": {
+            "nodes": ["Node3", "Node5", "Node10"]
+        },
+        "分别保存文本和图片到本地": {
+            "nodes": ["Node10", "Node11"]
+        }
+    }
+}
+```
+Round 3 processed and results saved.
+Processing round 4...
+Current round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "爬取文本内容并保存": {
+                "提取微信公众号文章的标题和正文内容": {},
+                "将图片替换为文件名并嵌入文本": {},
+                "保存文本内容到文件": {}
+            },
+            "爬取图像内容并保存": {
+                "提取微信公众号文章中的图像URL": {},
+                "下载图像并保存到本地": {}
+            },
+            "创建保存内容的本地文件夹": {},
+            "分两部分保存内容": {
+                "保存纯文本内容": {},
+                "保存完整内容（包括文本和图片）": {
+                    "分别保存文本和图片到本地": {}
+                }
+            }
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "从解析后的HTML中提取微信公众号文章的标题"},
+            {"id": "Node4", "description": "从解析后的HTML中提取微信公众号文章的正文内容"},
+            {"id": "Node5", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node6", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node7", "description": "创建保存内容的本地文件夹（如果不存在）"},
+            {"id": "Node8", "description": "将图片标签替换为图片文件名并嵌入文本"},
+            {"id": "Node9", "description": "保存仅包含文本内容的文件"},
+            {"id": "Node10", "description": "保存包含文本和图片的完整内容"},
+            {"id": "Node11", "description": "分别保存文本和图片到本地"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractTitle"},
+            {"source": "Node2", "target": "Node4", "type": "extractText"},
+            {"source": "Node4", "target": "Node8", "type": "replaceImageTagsWithFilenames"},
+            {"source": "Node8", "target": "Node9", "type": "saveTextToFile"},
+            {"source": "Node8", "target": "Node10", "type": "saveFullContent"},
+            {"source": "Node2", "target": "Node5", "type": "findImages"},
+            {"source": "Node5", "target": "Node6", "type": "downloadImages"},
+            {"source": "Node7", "target": "Node9", "type": "saveToFolder"},
+            {"source": "Node7", "target": "Node10", "type": "saveToFolder"},
+            {"source": "Node7", "target": "Node6", "type": "saveToFolder"},
+            {"source": "Node10", "target": "Node11", "type": "saveSeparateTextAndImages"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node11"]
+        },
+        "爬取文本内容并保存": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node7", "Node8", "Node9"]
+        },
+        "提取微信公众号文章的标题和正文内容": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4"]
+        },
+        "将图片替换为文件名并嵌入文本": {
+            "nodes": ["Node4", "Node8"]
+        },
+        "保存文本内容到文件": {
+            "nodes": ["Node8", "Node9", "Node7"]
+        },
+        "爬取图像内容并保存": {
+            "nodes": ["Node1", "Node2", "Node5", "Node6", "Node7"]
+        },
+        "提取微信公众号文章中的图像URL": {
+            "nodes": ["Node1", "Node2", "Node5"]
+        },
+        "下载图像并保存到本地": {
+            "nodes": ["Node5", "Node6", "Node7"]
+        },
+        "创建保存内容的本地文件夹": {
+            "nodes": ["Node7"]
+        },
+        "分两部分保存内容": {
+            "nodes": ["Node8", "Node9", "Node10", "Node11"]
+        },
+        "保存纯文本内容": {
+            "nodes": ["Node8", "Node9"]
+        },
+        "保存完整内容（包括文本和图片）": {
+            "nodes": ["Node8", "Node10", "Node11"]
+        },
+        "分别保存文本和图片到本地": {
+            "nodes": ["Node10", "Node11"]
+        }
+    }
+}
+```
+Round 4 processed and results saved.
+Processing round 5...
+Current round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "爬取文本内容并保存": {
+                "提取微信公众号文章的标题和正文内容": {
+                    "提取不同级别的标题（如H1, H2, H3等）": {},
+                    "提取正文段落内容": {}
+                },
+                "将图片替换为文件名并嵌入文本": {},
+                "保存文本内容到文件": {}
+            },
+            "爬取图像内容并保存": {
+                "提取微信公众号文章中的图像URL": {},
+                "下载图像并保存到本地": {}
+            },
+            "创建保存内容的本地文件夹": {},
+            "分两部分保存内容": {
+                "保存纯文本内容": {},
+                "保存完整内容（包括文本和图片）": {
+                    "分别保存文本和图片到本地": {}
+                }
+            }
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "从解析后的HTML中提取微信公众号文章的主标题"},
+            {"id": "Node4", "description": "从解析后的HTML中提取不同级别的标题（如H1, H2, H3等）"},
+            {"id": "Node5", "description": "从解析后的HTML中提取正文段落内容"},
+            {"id": "Node6", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node7", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node8", "description": "创建保存内容的本地文件夹（如果不存在）"},
+            {"id": "Node9", "description": "将图片标签替换为图片文件名并嵌入文本"},
+            {"id": "Node10", "description": "保存仅包含文本内容的文件"},
+            {"id": "Node11", "description": "保存包含文本和图片的完整内容"},
+            {"id": "Node12", "description": "分别保存文本和图片到本地"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractMainTitle"},
+            {"source": "Node2", "target": "Node4", "type": "extractHeadings"},
+            {"source": "Node2", "target": "Node5", "type": "extractParagraphs"},
+            {"source": "Node4", "target": "Node9", "type": "replaceImageTagsWithFilenames"},
+            {"source": "Node5", "target": "Node9", "type": "replaceImageTagsWithFilenames"},
+            {"source": "Node9", "target": "Node10", "type": "saveTextToFile"},
+            {"source": "Node9", "target": "Node11", "type": "saveFullContent"},
+            {"source": "Node2", "target": "Node6", "type": "findImages"},
+            {"source": "Node6", "target": "Node7", "type": "downloadImages"},
+            {"source": "Node8", "target": "Node10", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node11", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node7", "type": "saveToFolder"},
+            {"source": "Node11", "target": "Node12", "type": "saveSeparateTextAndImages"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node11", "Node12"]
+        },
+        "爬取文本内容并保存": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node8", "Node9", "Node10"]
+        },
+        "提取微信公众号文章的标题和正文内容": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5"]
+        },
+        "提取不同级别的标题（如H1, H2, H3等）": {
+            "nodes": ["Node2", "Node4"]
+        },
+        "提取正文段落内容": {
+            "nodes": ["Node2", "Node5"]
+        },
+        "将图片替换为文件名并嵌入文本": {
+            "nodes": ["Node4", "Node5", "Node9"]
+        },
+        "保存文本内容到文件": {
+            "nodes": ["Node9", "Node10", "Node8"]
+        },
+        "爬取图像内容并保存": {
+            "nodes": ["Node1", "Node2", "Node6", "Node7", "Node8"]
+        },
+        "提取微信公众号文章中的图像URL": {
+            "nodes": ["Node1", "Node2", "Node6"]
+        },
+        "下载图像并保存到本地": {
+            "nodes": ["Node6", "Node7", "Node8"]
+        },
+        "创建保存内容的本地文件夹": {
+            "nodes": ["Node8"]
+        },
+        "分两部分保存内容": {
+            "nodes": ["Node9", "Node10", "Node11", "Node12"]
+        },
+        "保存纯文本内容": {
+            "nodes": ["Node9", "Node10"]
+        },
+        "保存完整内容（包括文本和图片）": {
+            "nodes": ["Node9", "Node11", "Node12"]
+        },
+        "分别保存文本和图片到本地": {
+            "nodes": ["Node11", "Node12"]
+        }
+    }
+}
+```
+Round 5 processed and results saved.
+Processing round 6...
+Current round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "爬取文本内容并保存": {
+                "提取微信公众号文章的标题和正文内容": {
+                    "提取不同级别的标题（如H1, H2, H3等）": {},
+                    "提取正文段落内容": {}
+                },
+                "将图片替换为文件名并嵌入文本": {
+                    "确保图片标题正确插入文本中": {}
+                },
+                "保存文本内容到文件": {
+                    "调整文本换行逻辑以优化格式": {}
+                }
+            },
+            "爬取图像内容并保存": {
+                "提取微信公众号文章中的图像URL": {},
+                "下载图像并保存到本地": {}
+            },
+            "创建保存内容的本地文件夹": {},
+            "分两部分保存内容": {
+                "保存纯文本内容": {},
+                "保存完整内容（包括文本和图片）": {
+                    "分别保存文本和图片到本地": {}
+                }
+            }
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "从解析后的HTML中提取微信公众号文章的主标题"},
+            {"id": "Node4", "description": "从解析后的HTML中提取不同级别的标题（如H1, H2, H3等）"},
+            {"id": "Node5", "description": "从解析后的HTML中提取正文段落内容"},
+            {"id": "Node6", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node7", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node8", "description": "创建保存内容的本地文件夹（如果不存在）"},
+            {"id": "Node9", "description": "将图片标签替换为图片文件名并嵌入文本"},
+            {"id": "Node10", "description": "保存仅包含文本内容的文件"},
+            {"id": "Node11", "description": "保存包含文本和图片的完整内容"},
+            {"id": "Node12", "description": "分别保存文本和图片到本地"},
+            {"id": "Node13", "description": "确保图片标题正确插入文本中"},
+            {"id": "Node14", "description": "调整文本换行逻辑以优化格式"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractMainTitle"},
+            {"source": "Node2", "target": "Node4", "type": "extractHeadings"},
+            {"source": "Node2", "target": "Node5", "type": "extractParagraphs"},
+            {"source": "Node4", "target": "Node9", "type": "replaceImageTagsWithFilenames"},
+            {"source": "Node5", "target": "Node9", "type": "replaceImageTagsWithFilenames"},
+            {"source": "Node9", "target": "Node10", "type": "saveTextToFile"},
+            {"source": "Node9", "target": "Node11", "type": "saveFullContent"},
+            {"source": "Node2", "target": "Node6", "type": "findImages"},
+            {"source": "Node6", "target": "Node7", "type": "downloadImages"},
+            {"source": "Node8", "target": "Node10", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node11", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node7", "type": "saveToFolder"},
+            {"source": "Node11", "target": "Node12", "type": "saveSeparateTextAndImages"},
+            {"source": "Node9", "target": "Node13", "type": "insertImageTitles"},
+            {"source": "Node5", "target": "Node14", "type": "adjustLineBreaks"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node11", "Node12", "Node13", "Node14"]
+        },
+        "爬取文本内容并保存": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node8", "Node9", "Node10", "Node13", "Node14"]
+        },
+        "提取微信公众号文章的标题和正文内容": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5"]
+        },
+        "提取不同级别的标题（如H1, H2, H3等）": {
+            "nodes": ["Node2", "Node4"]
+        },
+        "提取正文段落内容": {
+            "nodes": ["Node2", "Node5"]
+        },
+        "将图片替换为文件名并嵌入文本": {
+            "nodes": ["Node4", "Node5", "Node9", "Node13"]
+        },
+        "确保图片标题正确插入文本中": {
+            "nodes": ["Node9", "Node13"]
+        },
+        "保存文本内容到文件": {
+            "nodes": ["Node9", "Node10", "Node8", "Node14"]
+        },
+        "调整文本换行逻辑以优化格式": {
+            "nodes": ["Node5", "Node14"]
+        },
+        "爬取图像内容并保存": {
+            "nodes": ["Node1", "Node2", "Node6", "Node7", "Node8"]
+        },
+        "提取微信公众号文章中的图像URL": {
+            "nodes": ["Node1", "Node2", "Node6"]
+        },
+        "下载图像并保存到本地": {
+            "nodes": ["Node6", "Node7", "Node8"]
+        },
+        "创建保存内容的本地文件夹": {
+            "nodes": ["Node8"]
+        },
+        "分两部分保存内容": {
+            "nodes": ["Node9", "Node10", "Node11", "Node12"]
+        },
+        "保存纯文本内容": {
+            "nodes": ["Node9", "Node10"]
+        },
+        "保存完整内容（包括文本和图片）": {
+            "nodes": ["Node9", "Node11", "Node12"]
+        },
+        "分别保存文本和图片到本地": {
+            "nodes": ["Node11", "Node12"]
+        }
+    }
+}
+```
+Round 6 processed and results saved.
+Processing round 7...
+Current round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "爬取文本内容并保存": {
+                "提取微信公众号文章的标题和正文内容": {
+                    "提取不同级别的标题（如H1, H2, H3等）": {},
+                    "提取正文段落内容": {}
+                },
+                "将图片替换为文件名并嵌入Markdown": {
+                    "确保图片标题正确插入Markdown中": {}
+                },
+                "保存Markdown内容到文件": {
+                    "调整文本换行逻辑以优化格式": {}
+                }
+            },
+            "爬取图像内容并保存": {
+                "提取微信公众号文章中的图像URL": {},
+                "下载图像并保存到本地": {}
+            },
+            "创建保存内容的本地文件夹": {},
+            "分两部分保存内容": {
+                "保存纯Markdown内容": {},
+                "保存完整内容（包括Markdown和图片）": {
+                    "分别保存Markdown和图片到本地": {}
+                }
+            }
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "从解析后的HTML中提取微信公众号文章的主标题"},
+            {"id": "Node4", "description": "从解析后的HTML中提取不同级别的标题（如H1, H2, H3等）"},
+            {"id": "Node5", "description": "从解析后的HTML中提取正文段落内容"},
+            {"id": "Node6", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node7", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node8", "description": "创建保存内容的本地文件夹（如果不存在）"},
+            {"id": "Node9", "description": "将图片标签替换为图片文件名并嵌入Markdown"},
+            {"id": "Node10", "description": "保存仅包含Markdown内容的文件"},
+            {"id": "Node11", "description": "保存包含Markdown和图片的完整内容"},
+            {"id": "Node12", "description": "分别保存Markdown和图片到本地"},
+            {"id": "Node13", "description": "确保图片标题正确插入Markdown中"},
+            {"id": "Node14", "description": "调整文本换行逻辑以优化格式"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractMainTitle"},
+            {"source": "Node2", "target": "Node4", "type": "extractHeadings"},
+            {"source": "Node2", "target": "Node5", "type": "extractParagraphs"},
+            {"source": "Node4", "target": "Node9", "type": "replaceImageTagsWithFilenames"},
+            {"source": "Node5", "target": "Node9", "type": "replaceImageTagsWithFilenames"},
+            {"source": "Node9", "target": "Node10", "type": "saveMarkdownToFile"},
+            {"source": "Node9", "target": "Node11", "type": "saveFullContent"},
+            {"source": "Node2", "target": "Node6", "type": "findImages"},
+            {"source": "Node6", "target": "Node7", "type": "downloadImages"},
+            {"source": "Node8", "target": "Node10", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node11", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node7", "type": "saveToFolder"},
+            {"source": "Node11", "target": "Node12", "type": "saveSeparateMarkdownAndImages"},
+            {"source": "Node9", "target": "Node13", "type": "insertImageTitles"},
+            {"source": "Node5", "target": "Node14", "type": "adjustLineBreaks"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node11", "Node12", "Node13", "Node14"]
+        },
+        "爬取文本内容并保存": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node8", "Node9", "Node10", "Node13", "Node14"]
+        },
+        "提取微信公众号文章的标题和正文内容": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5"]
+        },
+        "提取不同级别的标题（如H1, H2, H3等）": {
+            "nodes": ["Node2", "Node4"]
+        },
+        "提取正文段落内容": {
+            "nodes": ["Node2", "Node5"]
+        },
+        "将图片替换为文件名并嵌入Markdown": {
+            "nodes": ["Node4", "Node5", "Node9", "Node13"]
+        },
+        "确保图片标题正确插入Markdown中": {
+            "nodes": ["Node9", "Node13"]
+        },
+        "保存Markdown内容到文件": {
+            "nodes": ["Node9", "Node10", "Node8", "Node14"]
+        },
+        "调整文本换行逻辑以优化格式": {
+            "nodes": ["Node5", "Node14"]
+        },
+        "爬取图像内容并保存": {
+            "nodes": ["Node1", "Node2", "Node6", "Node7", "Node8"]
+        },
+        "提取微信公众号文章中的图像URL": {
+            "nodes": ["Node1", "Node2", "Node6"]
+        },
+        "下载图像并保存到本地": {
+            "nodes": ["Node6", "Node7", "Node8"]
+        },
+        "创建保存内容的本地文件夹": {
+            "nodes": ["Node8"]
+        },
+        "分两部分保存内容": {
+            "nodes": ["Node9", "Node10", "Node11", "Node12"]
+        },
+        "保存纯Markdown内容": {
+            "nodes": ["Node9", "Node10"]
+        },
+        "保存完整内容（包括Markdown和图片）": {
+            "nodes": ["Node9", "Node11", "Node12"]
+        },
+        "分别保存Markdown和图片到本地": {
+            "nodes": ["Node11", "Node12"]
+        }
+    }
+}
+```
+Round 7 processed and results saved.
+Processing round 8...
+Current round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "爬取文本内容并保存": {
+                "提取微信公众号文章的标题和正文内容": {
+                    "提取不同级别的标题（如H1, H2, H3等）": {},
+                    "提取正文段落内容": {}
+                },
+                "将图片替换为Markdown格式链接并嵌入Markdown": {
+                    "确保图片标题正确插入Markdown中": {}
+                },
+                "保存Markdown内容到文件": {
+                    "调整文本换行逻辑以优化格式": {}
+                }
+            },
+            "爬取图像内容并保存": {
+                "提取微信公众号文章中的图像URL": {},
+                "下载图像并保存到本地": {}
+            },
+            "创建保存内容的本地文件夹": {},
+            "分两部分保存内容": {
+                "保存纯Markdown内容": {},
+                "保存完整内容（包括Markdown和图片）": {
+                    "分别保存Markdown和图片到本地": {}
+                }
+            }
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "从解析后的HTML中提取微信公众号文章的主标题"},
+            {"id": "Node4", "description": "从解析后的HTML中提取不同级别的标题（如H1, H2, H3等）"},
+            {"id": "Node5", "description": "从解析后的HTML中提取正文段落内容"},
+            {"id": "Node6", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node7", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node8", "description": "创建保存内容的本地文件夹（如果不存在）"},
+            {"id": "Node9", "description": "将图片标签替换为Markdown格式的图片链接并嵌入Markdown"},
+            {"id": "Node10", "description": "保存仅包含Markdown内容的文件"},
+            {"id": "Node11", "description": "保存包含Markdown和图片的完整内容"},
+            {"id": "Node12", "description": "分别保存Markdown和图片到本地"},
+            {"id": "Node13", "description": "确保图片标题正确插入Markdown中"},
+            {"id": "Node14", "description": "调整文本换行逻辑以优化格式"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractMainTitle"},
+            {"source": "Node2", "target": "Node4", "type": "extractHeadings"},
+            {"source": "Node2", "target": "Node5", "type": "extractParagraphs"},
+            {"source": "Node4", "target": "Node9", "type": "replaceImageTagsWithMarkdownLinks"},
+            {"source": "Node5", "target": "Node9", "type": "replaceImageTagsWithMarkdownLinks"},
+            {"source": "Node9", "target": "Node10", "type": "saveMarkdownToFile"},
+            {"source": "Node9", "target": "Node11", "type": "saveFullContent"},
+            {"source": "Node2", "target": "Node6", "type": "findImages"},
+            {"source": "Node6", "target": "Node7", "type": "downloadImages"},
+            {"source": "Node8", "target": "Node10", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node11", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node7", "type": "saveToFolder"},
+            {"source": "Node11", "target": "Node12", "type": "saveSeparateMarkdownAndImages"},
+            {"source": "Node9", "target": "Node13", "type": "insertImageTitles"},
+            {"source": "Node5", "target": "Node14", "type": "adjustLineBreaks"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node11", "Node12", "Node13", "Node14"]
+        },
+        "爬取文本内容并保存": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node8", "Node9", "Node10", "Node13", "Node14"]
+        },
+        "提取微信公众号文章的标题和正文内容": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5"]
+        },
+        "提取不同级别的标题（如H1, H2, H3等）": {
+            "nodes": ["Node2", "Node4"]
+        },
+        "提取正文段落内容": {
+            "nodes": ["Node2", "Node5"]
+        },
+        "将图片替换为Markdown格式链接并嵌入Markdown": {
+            "nodes": ["Node4", "Node5", "Node9", "Node13"]
+        },
+        "确保图片标题正确插入Markdown中": {
+            "nodes": ["Node9", "Node13"]
+        },
+        "保存Markdown内容到文件": {
+            "nodes": ["Node9", "Node10", "Node8", "Node14"]
+        },
+        "调整文本换行逻辑以优化格式": {
+            "nodes": ["Node5", "Node14"]
+        },
+        "爬取图像内容并保存": {
+            "nodes": ["Node1", "Node2", "Node6", "Node7", "Node8"]
+        },
+        "提取微信公众号文章中的图像URL": {
+            "nodes": ["Node1", "Node2", "Node6"]
+        },
+        "下载图像并保存到本地": {
+            "nodes": ["Node6", "Node7", "Node8"]
+        },
+        "创建保存内容的本地文件夹": {
+            "nodes": ["Node8"]
+        },
+        "分两部分保存内容": {
+            "nodes": ["Node9", "Node10", "Node11", "Node12"]
+        },
+        "保存纯Markdown内容": {
+            "nodes": ["Node9", "Node10"]
+        },
+        "保存完整内容（包括Markdown和图片）": {
+            "nodes": ["Node9", "Node11", "Node12"]
+        },
+        "分别保存Markdown和图片到本地": {
+            "nodes": ["Node11", "Node12"]
+        }
+    }
+}
+```
+Round 8 processed and results saved.
+Processing round 9...
+Current round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "按顺序爬取内容并将图片和文本存放在一个Markdown文件中": {
+                "创建保存内容的本地文件夹": {},
+                "发起HTTP请求以获取目标网页的内容": {},
+                "解析HTML文档并提取标题和正文内容": {
+                    "提取微信公众号文章的主标题": {},
+                    "提取不同级别的标题（如H1, H2, H3等）": {},
+                    "提取正文段落内容": {}
+                },
+                "处理图片并嵌入Markdown文件": {
+                    "从HTML中提取所有图片URL": {},
+                    "下载图片并保存到本地文件夹": {},
+                    "将图片替换为Markdown格式链接并嵌入Markdown": {}
+                },
+                "保存Markdown文件": {
+                    "调整文本换行逻辑以优化格式": {},
+                    "将Markdown内容保存到文件": {}
+                }
+            }
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "从解析后的HTML中提取微信公众号文章的主标题"},
+            {"id": "Node4", "description": "从解析后的HTML中提取不同级别的标题（如H1, H2, H3等）"},
+            {"id": "Node5", "description": "从解析后的HTML中提取正文段落内容"},
+            {"id": "Node6", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node7", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node8", "description": "创建保存内容的本地文件夹（如果不存在）"},
+            {"id": "Node9", "description": "将图片标签替换为Markdown格式的图片链接并嵌入Markdown"},
+            {"id": "Node10", "description": "保存仅包含Markdown内容的文件"},
+            {"id": "Node11", "description": "保存包含Markdown和图片的完整内容"},
+            {"id": "Node12", "description": "分别保存Markdown和图片到本地"},
+            {"id": "Node13", "description": "确保图片标题正确插入Markdown中"},
+            {"id": "Node14", "description": "调整文本换行逻辑以优化格式"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractMainTitle"},
+            {"source": "Node2", "target": "Node4", "type": "extractHeadings"},
+            {"source": "Node2", "target": "Node5", "type": "extractParagraphs"},
+            {"source": "Node4", "target": "Node9", "type": "replaceImageTagsWithMarkdownLinks"},
+            {"source": "Node5", "target": "Node9", "type": "replaceImageTagsWithMarkdownLinks"},
+            {"source": "Node9", "target": "Node10", "type": "saveMarkdownToFile"},
+            {"source": "Node9", "target": "Node11", "type": "saveFullContent"},
+            {"source": "Node2", "target": "Node6", "type": "findImages"},
+            {"source": "Node6", "target": "Node7", "type": "downloadImages"},
+            {"source": "Node8", "target": "Node10", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node11", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node7", "type": "saveToFolder"},
+            {"source": "Node11", "target": "Node12", "type": "saveSeparateMarkdownAndImages"},
+            {"source": "Node9", "target": "Node13", "type": "insertImageTitles"},
+            {"source": "Node5", "target": "Node14", "type": "adjustLineBreaks"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node11", "Node12", "Node13", "Node14"]
+        },
+        "按顺序爬取内容并将图片和文本存放在一个Markdown文件中": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node13", "Node14"]
+        },
+        "创建保存内容的本地文件夹": {
+            "nodes": ["Node8"]
+        },
+        "发起HTTP请求以获取目标网页的内容": {
+            "nodes": ["Node1"]
+        },
+        "解析HTML文档并提取标题和正文内容": {
+            "nodes": ["Node2", "Node3", "Node4", "Node5"]
+        },
+        "提取微信公众号文章的主标题": {
+            "nodes": ["Node2", "Node3"]
+        },
+        "提取不同级别的标题（如H1, H2, H3等）": {
+            "nodes": ["Node2", "Node4"]
+        },
+        "提取正文段落内容": {
+            "nodes": ["Node2", "Node5"]
+        },
+        "处理图片并嵌入Markdown文件": {
+            "nodes": ["Node6", "Node7", "Node9", "Node13"]
+        },
+        "从HTML中提取所有图片URL": {
+            "nodes": ["Node2", "Node6"]
+        },
+        "下载图片并保存到本地文件夹": {
+            "nodes": ["Node6", "Node7", "Node8"]
+        },
+        "将图片替换为Markdown格式链接并嵌入Markdown": {
+            "nodes": ["Node4", "Node5", "Node9", "Node13"]
+        },
+        "保存Markdown文件": {
+            "nodes": ["Node9", "Node10", "Node8", "Node14"]
+        },
+        "调整文本换行逻辑以优化格式": {
+            "nodes": ["Node5", "Node14"]
+        },
+        "将Markdown内容保存到文件": {
+            "nodes": ["Node9", "Node10"]
+        }
+    }
+}
+```
+Round 9 processed and results saved.
+Processing round 10...
+Current round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "按顺序爬取内容并将图片和文本存放在一个txt文件中": {
+                "创建保存内容的本地文件夹": {},
+                "发起HTTP请求以获取目标网页的内容": {},
+                "解析HTML文档并提取标题和正文内容": {
+                    "提取微信公众号文章的主标题": {},
+                    "提取不同级别的标题（如H1, H2, H3等）": {},
+                    "提取正文段落内容": {}
+                },
+                "处理图片并嵌入txt文件": {
+                    "从HTML中提取所有图片URL": {},
+                    "下载图片并保存到本地文件夹": {},
+                    "将图片替换为Markdown格式链接并嵌入txt": {}
+                },
+                "保存txt文件": {
+                    "调整文本换行逻辑以优化格式": {},
+                    "将txt内容保存到文件": {}
+                }
+            }
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "从解析后的HTML中提取微信公众号文章的主标题"},
+            {"id": "Node4", "description": "从解析后的HTML中提取不同级别的标题（如H1, H2, H3等）"},
+            {"id": "Node5", "description": "从解析后的HTML中提取正文段落内容"},
+            {"id": "Node6", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node7", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node8", "description": "创建保存内容的本地文件夹（如果不存在）"},
+            {"id": "Node9", "description": "将图片标签替换为Markdown格式的图片链接并嵌入txt"},
+            {"id": "Node10", "description": "保存仅包含txt内容的文件"},
+            {"id": "Node11", "description": "保存包含txt和图片的完整内容"},
+            {"id": "Node12", "description": "分别保存txt和图片到本地"},
+            {"id": "Node13", "description": "确保图片标题正确插入txt中"},
+            {"id": "Node14", "description": "调整文本换行逻辑以优化格式"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractMainTitle"},
+            {"source": "Node2", "target": "Node4", "type": "extractHeadings"},
+            {"source": "Node2", "target": "Node5", "type": "extractParagraphs"},
+            {"source": "Node4", "target": "Node9", "type": "replaceImageTagsWithMarkdownLinks"},
+            {"source": "Node5", "target": "Node9", "type": "replaceImageTagsWithMarkdownLinks"},
+            {"source": "Node9", "target": "Node10", "type": "saveTxtToFile"},
+            {"source": "Node9", "target": "Node11", "type": "saveFullContent"},
+            {"source": "Node2", "target": "Node6", "type": "findImages"},
+            {"source": "Node6", "target": "Node7", "type": "downloadImages"},
+            {"source": "Node8", "target": "Node10", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node11", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node7", "type": "saveToFolder"},
+            {"source": "Node11", "target": "Node12", "type": "saveSeparateTxtAndImages"},
+            {"source": "Node9", "target": "Node13", "type": "insertImageTitles"},
+            {"source": "Node5", "target": "Node14", "type": "adjustLineBreaks"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node11", "Node12", "Node13", "Node14"]
+        },
+        "按顺序爬取内容并将图片和文本存放在一个txt文件中": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node13", "Node14"]
+        },
+        "创建保存内容的本地文件夹": {
+            "nodes": ["Node8"]
+        },
+        "发起HTTP请求以获取目标网页的内容": {
+            "nodes": ["Node1"]
+        },
+        "解析HTML文档并提取标题和正文内容": {
+            "nodes": ["Node2", "Node3", "Node4", "Node5"]
+        },
+        "提取微信公众号文章的主标题": {
+            "nodes": ["Node2", "Node3"]
+        },
+        "提取不同级别的标题（如H1, H2, H3等）": {
+            "nodes": ["Node2", "Node4"]
+        },
+        "提取正文段落内容": {
+            "nodes": ["Node2", "Node5"]
+        },
+        "处理图片并嵌入txt文件": {
+            "nodes": ["Node6", "Node7", "Node9", "Node13"]
+        },
+        "从HTML中提取所有图片URL": {
+            "nodes": ["Node2", "Node6"]
+        },
+        "下载图片并保存到本地文件夹": {
+            "nodes": ["Node6", "Node7", "Node8"]
+        },
+        "将图片替换为Markdown格式链接并嵌入txt": {
+            "nodes": ["Node4", "Node5", "Node9", "Node13"]
+        },
+        "保存txt文件": {
+            "nodes": ["Node9", "Node10", "Node8", "Node14"]
+        },
+        "调整文本换行逻辑以优化格式": {
+            "nodes": ["Node5", "Node14"]
+        },
+        "将txt内容保存到文件": {
+            "nodes": ["Node9", "Node10"]
+        }
+    }
+}
+```
+Round 10 processed and results saved.
+Processing round 11...
+Current round result:  ```JSON_RESULT
+{
+    "intent_tree": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "按顺序爬取内容并将图片和文本存放在一个txt文件中": {
+                "创建保存内容的本地文件夹": {},
+                "发起HTTP请求以获取目标网页的内容": {},
+                "解析HTML文档并提取标题和正文内容": {
+                    "提取微信公众号文章的主标题": {},
+                    "提取不同级别的标题（如H1, H2, H3等）": {},
+                    "提取正文段落内容": {}
+                },
+                "处理图片并嵌入txt文件": {
+                    "从HTML中提取所有图片URL": {},
+                    "下载图片并保存到本地文件夹": {},
+                    "将图片替换为Markdown格式链接并嵌入txt": {}
+                },
+                "保存txt文件": {
+                    "调整文本换行逻辑以优化格式": {},
+                    "将txt内容保存到文件": {}
+                }
+            },
+            "生成仅包含纯文本的额外txt文件": {
+                "提取仅包含纯文本的内容": {},
+                "保存纯文本文件": {}
+            }
+        }
+    },
+    "task_graph": {
+        "nodes": [
+            {"id": "Node1", "description": "发起HTTP请求以获取目标网页的内容"},
+            {"id": "Node2", "description": "使用BeautifulSoup解析HTML文档"},
+            {"id": "Node3", "description": "从解析后的HTML中提取微信公众号文章的主标题"},
+            {"id": "Node4", "description": "从解析后的HTML中提取不同级别的标题（如H1, H2, H3等）"},
+            {"id": "Node5", "description": "从解析后的HTML中提取正文段落内容"},
+            {"id": "Node6", "description": "在HTML文档中查找所有的图像URL"},
+            {"id": "Node7", "description": "下载图像并保存到本地文件夹中"},
+            {"id": "Node8", "description": "创建保存内容的本地文件夹（如果不存在）"},
+            {"id": "Node9", "description": "将图片标签替换为Markdown格式的图片链接并嵌入txt"},
+            {"id": "Node10", "description": "保存仅包含txt内容的文件"},
+            {"id": "Node11", "description": "保存包含txt和图片的完整内容"},
+            {"id": "Node12", "description": "分别保存txt和图片到本地"},
+            {"id": "Node13", "description": "确保图片标题正确插入txt中"},
+            {"id": "Node14", "description": "调整文本换行逻辑以优化格式"},
+            {"id": "Node15", "description": "提取仅包含纯文本的内容"},
+            {"id": "Node16", "description": "保存纯文本文件"}
+        ],
+        "links": [
+            {"source": "Node1", "target": "Node2", "type": "parse"},
+            {"source": "Node2", "target": "Node3", "type": "extractMainTitle"},
+            {"source": "Node2", "target": "Node4", "type": "extractHeadings"},
+            {"source": "Node2", "target": "Node5", "type": "extractParagraphs"},
+            {"source": "Node4", "target": "Node9", "type": "replaceImageTagsWithMarkdownLinks"},
+            {"source": "Node5", "target": "Node9", "type": "replaceImageTagsWithMarkdownLinks"},
+            {"source": "Node9", "target": "Node10", "type": "saveTxtToFile"},
+            {"source": "Node9", "target": "Node11", "type": "saveFullContent"},
+            {"source": "Node2", "target": "Node6", "type": "findImages"},
+            {"source": "Node6", "target": "Node7", "type": "downloadImages"},
+            {"source": "Node8", "target": "Node10", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node11", "type": "saveToFolder"},
+            {"source": "Node8", "target": "Node7", "type": "saveToFolder"},
+            {"source": "Node11", "target": "Node12", "type": "saveSeparateTxtAndImages"},
+            {"source": "Node9", "target": "Node13", "type": "insertImageTitles"},
+            {"source": "Node5", "target": "Node14", "type": "adjustLineBreaks"},
+            {"source": "Node5", "target": "Node15", "type": "extractPlainText"},
+            {"source": "Node15", "target": "Node16", "type": "savePlainTextFile"}
+        ]
+    },
+    "mapping": {
+        "写一个爬虫程序，爬取指定URL的内容并保存到本地": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node11", "Node12", "Node13", "Node14", "Node15", "Node16"]
+        },
+        "按顺序爬取内容并将图片和文本存放在一个txt文件中": {
+            "nodes": ["Node1", "Node2", "Node3", "Node4", "Node5", "Node6", "Node7", "Node8", "Node9", "Node10", "Node13", "Node14"]
+        },
+        "创建保存内容的本地文件夹": {
+            "nodes": ["Node8"]
+        },
+        "发起HTTP请求以获取目标网页的内容": {
+            "nodes": ["Node1"]
+        },
+        "解析HTML文档并提取标题和正文内容": {
+            "nodes": ["Node2", "Node3", "Node4", "Node5"]
+        },
+        "提取微信公众号文章的主标题": {
+            "nodes": ["Node2", "Node3"]
+        },
+        "提取不同级别的标题（如H1, H2, H3等）": {
+            "nodes": ["Node2", "Node4"]
+        },
+        "提取正文段落内容": {
+            "nodes": ["Node2", "Node5"]
+        },
+        "处理图片并嵌入txt文件": {
+            "nodes": ["Node6", "Node7", "Node9", "Node13"]
+        },
+        "从HTML中提取所有图片URL": {
+            "nodes": ["Node2", "Node6"]
+        },
+        "下载图片并保存到本地文件夹": {
+            "nodes": ["Node6", "Node7", "Node8"]
+        },
+        "将图片替换为Markdown格式链接并嵌入txt": {
+            "nodes": ["Node4", "Node5", "Node9", "Node13"]
+        },
+        "保存txt文件": {
+            "nodes": ["Node9", "Node10", "Node8", "Node14"]
+        },
+        "调整文本换行逻辑以优化格式": {
+            "nodes": ["Node5", "Node14"]
+        },
+        "将txt内容保存到文件": {
+            "nodes": ["Node9", "Node10"]
+        },
+        "生成仅包含纯文本的额外txt文件": {
+            "nodes": ["Node5", "Node15", "Node16"]
+        },
+        "提取仅包含纯文本的内容": {
+            "nodes": ["Node5", "Node15"]
+        },
+        "保存纯文本文件": {
+            "nodes": ["Node15", "Node16"]
+        }
+    }
+}
+```
+Round 11 processed and results saved.
+Processing round 12...
+No more rounds to process.
+Processing completed.
